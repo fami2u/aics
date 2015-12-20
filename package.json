@@ -1,0 +1,23 @@
+{
+  "name": "aics",
+  "version": "0.0.1",
+  "description": "AICS eco-system command line tools",
+  "dependencies": {
+    "archiver": "0.14.x",
+    "cjson": "0.3.x",
+    "request":"2.67.0",
+    "querystring":"0.2.0",
+    "unzip":"0.1.11",
+    "walk-promise":"0.1.0",
+    "md5":"2.0.0"
+  },
+  "bin": {
+    "aics": "./bin/aics"
+  },
+  "author": "Hannan Sun <sunhannan@fami2u.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fami2u/aics.git"
+  },
+  "license": "MIT"
+}
