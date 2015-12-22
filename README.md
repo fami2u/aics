@@ -35,13 +35,14 @@ $aics init
 
 aics项目下会包含一些文件结构
 
-*
+```
+PROJECT_ROOT/
 .aics-project.json             项目配置文件，管理代码包依赖关系 
 ./aics                         代码包配置列表及相关文件存放
 ./aics/tmp                     临时目录
 ./aics/example.depot.json      代码包配置例子文件,可以包含多个
 ./aics/packages.json           已倒入的所有代码包及版本信息
-*
+```
 
 ```
 $aics add package:name
