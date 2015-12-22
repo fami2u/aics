@@ -1,56 +1,88 @@
 #!/usr/bin/env node
 
+var ProjectManager = require('../lib/project');
 var PackageManager = require('../lib/package');
 var AccountManager = require('../lib/account');
-var UpdateManager = require('../lib/update');
-var ProjectManager = require('../lib/project');
+var Tools = require('../lib/tools');
 
 
 var controller = process.argv[2];
 var havc = false;
-if(controller == "package"){
-  if(process.argv[3] == "create"){
-      havc = true;
-      if(process.argv[4]){
-          PackageManager.create(process.argv[4]);
-      }else{
-         console.log("need a package name like 'aics package create account-base'");
-      }
-  }else if(process.argv[3] == "publish"){
-      havc = true;
-      PackageManager.publish();
-  }
-}else if(controller == "adduser"){
+// if(controller == "package"){
+//   if(process.argv[3] == "create"){
+//       havc = true;
+//       if(process.argv[4]){
+//           PackageManager.create(process.argv[4]);
+//       }else{
+//          console.log("need a package name like 'aics package create account-base'");
+//       }
+//   }else if(process.argv[3] == "publish"){
+//       havc = true;
+//       PackageManager.publish();
+//   }
+// }else if(controller == "adduser"){
+//     havc = true;
+//     if(process.argv[3]){
+//        AccountManager.adduser(process.argv[3]);
+//     }else{
+//        console.log("error , like 'aics adduser fami@163.com'");
+//     }
+    
+// }else if(controller == "update"){
+//     havc = true;
+//     UpdateManager.update();
+// }else if(controller == "add"){
+//     havc = true;
+//     UpdateManager.add(process.argv[3]);
+// }else if(controller == "project"){
+
+//     if(process.argv[3] == "init"){
+//         ProjectManager.init(process.argv[4]);
+//         havc = true;
+//     }
+// }
+if(controller == "adduser"){
     havc = true;
     if(process.argv[3]){
        AccountManager.adduser(process.argv[3]);
     }else{
        console.log("error , like 'aics adduser fami@163.com'");
     }
-    
-}else if(controller == "update"){
+}if(controller == "-v"){
     havc = true;
-    UpdateManager.update();
+     console.log("version 0.0.1");
+}if(controller == "-u"){
+    havc = true;
+    var account = AccountManager.get();
+    console.log(account.username);
+}if(controller == "-h"){
+    havc = true;
+    console.log("============================ aics 帮助 =================================");
+    console.log("adduser                                 增加注册用户信息，可访问http://code-depot.cc 获取帐号");
+    console.log("init                                    将当前目录初始化为AICS管理目录");
+    console.log("add [package name]                      当前项目添加包");
+    console.log("update                                  更新依赖包");
+    console.log("publish                                 发布当前目下的所有自定义包");
+    console.log("==========================================================================");
+}else if(controller == "init"){
+    havc = true;
+    ProjectManager.init();
 }else if(controller == "add"){
+    Tools.checkProject();
     havc = true;
-    UpdateManager.add(process.argv[3]);
-}else if(controller == "project"){
-
-    if(process.argv[3] == "init"){
-        ProjectManager.init(process.argv[4]);
-        havc = true;
-    }
+    ProjectManager.add(process.argv[3]);
+}else if(controller == "update"){
+    Tools.checkProject();
+    havc = true;
+    ProjectManager.update(process.argv[3]);
+}else if(controller == "publish"){
+    Tools.checkProject();
+    havc = true;
+    PackageManager.publish(process.argv[3]);
 }
 
 if(!havc){
  
-  console.log("============================ aics helps =================================");
-  console.log("package create [package name]           create a aics package with template");
-  console.log("package publish                         publish aics package to code-depot.cc");
-  console.log("adduser                                 set account info for localtion");
-  console.log("update                                  setup dependencies code packages in my package or project");
-  console.log("project init [project name]             create a aics project with some code packages here with template");
-  console.log("add [package name]              add some code packages in package or project");
-  console.log("==========================================================================");
+  console.log("未发现相关命令。使用-h参数了解目前支持功能。");
   
 }
