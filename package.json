@@ -1,7 +1,7 @@
 {
   "name": "aics",
-  "version": "0.0.1",
-  "description": "AICS eco-system command line tools",
+  "version": "0.0.5",
+  "description": "AICS",
   "dependencies": {
     "archiver": "0.14.x",
     "cjson": "0.3.x",
@@ -12,7 +12,8 @@
     "md5":"2.0.0"
   },
   "bin": {
-    "aics": "./bin/aics"
+    "aics": "./bin/aics",
+    "aicsd": "./bin/dev"
   },
   "author": "Hannan Sun <sunhannan@fami2u.com>",
   "repository": {

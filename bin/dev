@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+//设置开发模式
+
+console.log("正在使用开发模式");
+
+
+process.env.DEBUG = 1;
+
+var main = require('../lib/main');
+main();
