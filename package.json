@@ -5,11 +5,12 @@
   "dependencies": {
     "archiver": "0.14.x",
     "cjson": "0.3.x",
-    "request":"2.67.0",
-    "querystring":"0.2.0",
-    "unzip":"0.1.11",
-    "walk-promise":"0.1.0",
-    "md5":"2.0.0"
+    "md5": "2.0.0",
+    "node-uuid": "^1.4.7",
+    "querystring": "0.2.0",
+    "request": "2.67.0",
+    "unzip": "0.1.11",
+    "walk-promise": "0.1.0"
   },
   "bin": {
     "aics": "./bin/aics",
