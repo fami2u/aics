@@ -4,13 +4,15 @@
   "description": "AICS",
   "dependencies": {
     "archiver": "0.14.x",
+    "chalk": "^1.1.1",
     "cjson": "0.3.x",
     "md5": "2.0.0",
     "node-uuid": "^1.4.7",
     "querystring": "0.2.0",
     "request": "2.67.0",
     "unzip": "0.1.11",
-    "walk-promise": "0.1.0"
+    "walk-promise": "0.1.0",
+    "walk-sync": "^0.2.6"
   },
   "bin": {
     "aics": "./bin/aics",
