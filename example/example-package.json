@@ -1,26 +1,29 @@
 {
     //*!所有名称请使用小写字母
     //在这这里填写试用的原型组名称。可以在http://code-depot.com查询或根据需要新建
-    "prototype": "dora",
+    "prototype": "meteor",
     //代码包命名规则“用户名:代码包"
-    "name": "",
+    "name": "qintengfei:baidumap",
     //版本号0.0.1
-    "version": "",
+    "version": "0.0.1",
     //对于代码包的简单功能描述
-    "summary": "",
-   	//代码包的GIT地址
-    "git":"",
+    "summary": "meteor,baidumap",
+    //代码包的GIT地址
+    "git": "",
     //说明文件地址
-    "documentation": "",
+    "documentation": "README.md",
     //代码包的依赖关系
     "dependencies": {
         //代码包名称:版本号
     },
+    "meteor": {
+        "packages": []
+    },
     //可供下载的文件，未下载files中的文件不会被下载
     "files": [],
     //数据库切片
-    "database":{
-    	//表或集合名称
-    	
+    "database": {
+        //表或集合名称
+
     }
 }
