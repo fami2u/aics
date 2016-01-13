@@ -1,15 +1,11 @@
 
-module.exports = commands;
+module.exports = Commands;
 
 function Commands (command,args) {
 
 }
 
 
-Commands.prototype.run = function() {
-
-};
-
-Commands.prototype.helper = function() {
+Commands = function() {
 
 };

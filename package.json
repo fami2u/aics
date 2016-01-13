@@ -1,27 +1,30 @@
 {
-    "name": "aics",
-    "version": "0.0.5",
-    "description": "AICS",
-    "dependencies": {
-        "archiver": "0.14.x",
-        "chalk": "^1.1.1",
-        "cjson": "0.3.x",
-        "md5": "2.0.0",
-        "node-uuid": "^1.4.7",
-        "querystring": "0.2.0",
-        "request": "2.67.0",
-        "unzip": "0.1.11",
-        "walk-promise": "0.1.0",
-        "walk-sync": "^0.2.6"
-    },
-    "bin": {
-        "aics": "./bin/aics",
-        "aicsd": "./bin/dev"
-    },
-    "author": "Hannan Sun <sunhannan@fami2u.com>",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/fami2u/aics.git"
-    },
-    "license": "MIT"
+  "name": "aics",
+  "version": "0.0.7",
+  "description": "AICS",
+  "dependencies": {
+    "archiver": "0.21.x",
+    "chalk": "^1.1.1",
+    "cjson": "0.3.x",
+    "foreachasync": "^5.0.5",
+    "inquirer": "^0.11.2",
+    "md5": "2.0.0",
+    "node-uuid": "^1.4.7",
+    "querystring": "0.2.0",
+    "request": "2.67.0",
+    "unzip": "0.1.11",
+    "walk": "^2.3.9",
+    "walk-promise": "0.1.0",
+    "walk-sync": "^0.2.6"
+  },
+  "bin": {
+    "aics": "./bin/aics",
+    "aicsd": "./bin/dev"
+  },
+  "author": "Hannan Sun <sunhannan@fami2u.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fami2u/aics.git"
+  },
+  "license": "MIT"
 }
