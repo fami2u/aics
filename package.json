@@ -1,6 +1,6 @@
 {
   "name": "aics",
-  "version": "0.0.18",
+  "version": "0.0.23",
   "description": "AICS",
   "dependencies": {
     "archiver": "0.21.x",
@@ -10,6 +10,7 @@
     "inquirer": "^0.11.2",
     "md5": "2.0.0",
     "node-uuid": "^1.4.7",
+    "qs": "^6.0.2",
     "querystring": "0.2.0",
     "request": "2.67.0",
     "unzip": "0.1.11",
