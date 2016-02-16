@@ -1,6 +1,8 @@
 # aics
 
-## 配合 code-depot.cc 代码仓库使用的代码包管理工具
+ 配合 codedepot.fami2u.com 代码仓库使用的代码包管理工具
+
+(optional)使用[nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)管理本地nodejs版本
 
 ### 安装aics-cli
 
@@ -12,101 +14,145 @@ $npm install aics -g
 
 ### aics常用命令
 
-```
-$aics -v  
-```
-当前aics版本
+* 查看当前aics版本 `stable`
 
 ```
-$aics -h
-```
-帮助文档－会列出所有支持命令
-
-```
-$aics -u
-```
-当前帐户信息
-
-```
-$aics init
-```
-初始化当前目录为aics项目。
-
-
-aics项目下会包含一些文件结构
-
-```
-PROJECT_ROOT/
-.aics-project.json             项目配置文件，管理代码包依赖关系 
-./aics                         代码包配置列表及相关文件存放
-./aics/tmp                     临时目录
-./aics/example.depot.json      代码包配置例子文件,可以包含多个
-./aics/packages.json           已倒入的所有代码包及版本信息
+$ aics -v
 ```
 
-```
-$aics add package:name
-```
-为当前项目添加一个代码包。代码包的名称可以在 http://code-depot.cc (暂未上线，临时访问：http://123.56.120.32:8805/)。
+* 列出所有命令 `stable`
 
 ```
-$aics update [package-config|-all]
+$ aics -h
 ```
-根据配置文件更新代码包。没有参数的情况下是更新项目的依赖，当前目录下的aics-project.json。指定文件名称或-all参数会在.aics目录下寻找对应的.depot.json后缀文件进行更新
+
+* 当前帐户信息 `stable`
 
 ```
-$aics adduser username
+$ aics -u
 ```
-设置当前的aics帐号，只有在需要使用代码仓库时使用。
+
+* 初始化当前目录为aics项目 `stable`
+ 
+> 可选参数 －p init as package
+> 可选参数 －P init as project
+> --example username:projectName    根据项目模版创建项目，可用项目模版 http://codedepot.fami2u.com/projects
+> 没有可选参数时默认创建 aics package 项目
 
 ```
-$aics publish [package-config]
-```
-将代码包发布到code－depot。未指定参数将发布项目下的全部代码包。
-
-### AICS的配置文件
+$ aics init $name
 
 ```
-PROJECT_ROOT/aics-project.json
+
+* 为当前aics项目添加一个代码包 `stable`
+
+>访问codedepot.fami2u.com 获取更多代码包
+
+```
+$ aics add $package-name
+```
+
+* 根据配置文件更新代码包 `stable`
+
+>没有参数的情况下是更新 aics项目 的依赖，即当前目录下的$proj.project.json。指定文件名称或-all参数会在.aics目录下寻找对应的$package.depot.json后缀文件进行更新
+
+```
+$ aics update [$package-name|-all]
+```
+
+* 登录aics客户端 `stable`
+
+> 设置当前的aics帐号，只有在需要使用代码仓库时使用
+
+```
+$ aics adduser username
+```
+
+* 发布代码包 `stable`
+
+> 发布之后可以在codedepot.fami2u.com找到
+
+```
+$ aics publish [package-config]
+```
+
+* 删除远程代码包 `stable`
+
+> 删除在codedepot.fami2u.com的代码包
+
+```
+$ aics remote-del $package-name
+```
+
+* 删除本地已安装代码包 `stable`
+
+
+```
+$ aics remove $package-name
+```
+
+* 清除代码包缓存 `stable`
+
+```
+$ aics clear
+```
+
+* 给创建的代码包添加文件 `stable`
+
+```
+$ aics addfile $file|$dir
+```
+
+* 列出创建的代码包包含的文件 `stable`
+
+```
+$ aics lsfile $package-name
+```
+
+
+### aics项目下会包含一些文件结构说明
+
+```
+ROOT_DIR/ 
+.aics                         代码包配置列表及相关文件存放
+.aics／project.json        	  项目配置文件，管理代码包依赖关系
+.aics/tmp                     临时目录，存放安装时的临时代码文件
+.aics/$package-name.depot.json 代码包配置例子文件,可以包含多个
+.aics/packages.json           已安装的所有代码包及版本信息
+```
+
+### AICS的配置文件详解
+
+> 配置文件不支持特殊字符
+> 配置文件不支持注释
+
+```
+DIR_ROOT/project.json
 {
-    //*!所有名称请使用小写字母
-    //项目名称
-    "name": "{{name}}",
-    //在这这里填写试用的原型组名称。可以在http://code-depot.com查询或根据需要新建
-    "prototype": "dora",
-    //版本号
+    "name": "项目名称",
+    "prototype": "栈名称",
     "version": "0.0.1",
-    //对于项目的简单功能描述
-    "summary": "description your project",
-   	//项目的GIT地址
-    "git":"https://github.com/fami2u/aics",
+    "summary": "项目的简单描述",
+    "git":"项目的GIT地址",
     //代码包的依赖关系
     "dependencies": {
-
+			"$package-name":"v0.0.1"
     }
 }
 ```
 ```
 
-PROJECT_ROOT/.aics/example-package.json
+DIR_ROOT/.aics/example-package.json
 
 {
-    //*!所有名称请使用小写字母
-    //在这这里填写试用的原型组名称。可以在http://code-depot.com查询或根据需要新建
-    "prototype": "dora",
-    //代码包命名规则“用户名:代码包"
-    "name": "fami2u:account-base",
-    //版本号
+    "prototype": "原型名称",
+    "name": "$package-name",
     "version": "0.0.1",
-    //对于代码包的简单功能描述
-    "summary": "description your package",
-   	//代码包的GIT地址
-    "git":"https://github.com/fami2u/aics",
-    //说明文件地址
-    "documentation": "README.md",
-    //代码包的依赖关系
+    "summary": "代码包的简单描述",
+    "git":"代码包的GIT地址",
+    "documentation": "说明文件地址 README.md",
     "dependencies": {
-
+		'代码包的依赖关系'
     },
     //可供下载的文件，未下载files中的文件不会被下载
     "files": [
