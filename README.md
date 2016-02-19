@@ -155,11 +155,9 @@ DIR_ROOT/.aics/example-package.json
     "dependencies": {
 		'代码包的依赖关系'
     },
-    //可供下载的文件，未下载files中的文件不会被下载
     "files": [
-        "abc.css",
-        "bbb.css"
-    ],
+        "可供下载的文件，未下载files中的文件不会被下载"
+            ],
     //数据库切片
     "database":{
     	//表或集合名称
