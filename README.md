@@ -9,8 +9,7 @@
 AICS的命令行工具依赖nodejs 目前测试 0.10.x 及 4.x版本可以正常运行
 
 ```
-$npm install aics -g
-
+$ npm install aics -g
 ```
 
 ### aics常用命令
@@ -34,15 +33,15 @@ $ aics -u
 ```
 
 * 初始化当前目录为aics项目 `stable`
- 
-> 可选参数 －p init as package
-> 可选参数 －P init as project
-> --example username:projectName    根据项目模版创建项目，可用项目模版 http://codedepot.fami2u.com/projects
+
 > 没有可选参数时默认创建 aics package 项目
 
 ```
-$ aics init $name
+$ aics init [option] <string>
 
+option:
+-p 创建aics project 项目
+-e 根据aics 项目模版创建项目
 ```
 
 * 为当前aics项目添加一个代码包 `stable`
@@ -66,7 +65,7 @@ $ aics update [$package-name|-all]
 > 设置当前的aics帐号，只有在需要使用代码仓库时使用
 
 ```
-$ aics adduser username
+$ aics adduser
 ```
 
 * 发布代码包 `stable`
@@ -74,7 +73,7 @@ $ aics adduser username
 > 发布之后可以在codedepot.fami2u.com找到
 
 ```
-$ aics publish [package-config]
+$ aics publish -p|-P[package-config]
 ```
 
 * 删除远程代码包 `stable`
@@ -116,7 +115,7 @@ $ aics lsfile $package-name
 ```
 ROOT_DIR/ 
 .aics /                       代码包配置列表及相关文件存放
-.aics／project.json        	  项目配置文件，管理代码包依赖关系
+.aics／project.json            项目配置文件，管理代码包依赖关系
 .aics/tmp                     临时目录，存放安装时的临时代码文件
 .aics/$package-name.depot.json 代码包配置例子文件,可以包含多个
 .aics/packages.json           已安装的所有代码包及版本信息
@@ -137,7 +136,7 @@ DIR_ROOT/project.json
     "git":"项目的GIT地址",
     //代码包的依赖关系
     "dependencies": {
-			"$package-name":"v0.0.1"
+            "$package-name":"v0.0.1"
     }
 }
 ```
@@ -153,20 +152,20 @@ DIR_ROOT/.aics/example-package.json
     "git":"代码包的GIT地址",
     "documentation": "说明文件地址 README.md",
     "dependencies": {
-		'代码包的依赖关系'
+        '代码包的依赖关系'
     },
     "files": [
         "可供下载的文件，未下载files中的文件不会被下载"
             ],
     //数据库切片
     "database":{
-    	//表或集合名称
-    	"users":{
-    		//字段名及类型
-    		"uid":"int32",
-    		"createAt":"date",
-    		"nickname":"string"
-    	}
+        //表或集合名称
+        "users":{
+            //字段名及类型
+            "uid":"int32",
+            "createAt":"date",
+            "nickname":"string"
+        }
     }
 }
 
