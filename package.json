@@ -1,33 +1,48 @@
 {
-    "name": "aics",
-    "version": "0.0.33",
-    "description": "AICS",
-    "dependencies": {
-        "archiver": "0.21.x",
-        "chalk": "^1.1.1",
-        "cjson": "0.3.x",
-        "foreachasync": "^5.0.5",
-        "inquirer": "^0.11.2",
-        "md5": "2.0.0",
-        "node-uuid": "^1.4.7",
-        "qs": "^6.0.2",
-        "querystring": "0.2.0",
-        "request": "2.67.0",
-        "unzip": "0.1.11",
-        "walk": "^2.3.9",
-        "walk-promise": "0.1.0",
-        "walk-sync": "^0.2.6",
-        "minimist": "^1.2.0"
-    },
-    "bin": {
-        "aics": "./bin/aics",
-        "aicsd": "./bin/dev"
-    },
-    "author": "Hannan Sun <sunhannan@fami2u.com>",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/fami2u/aics.git"
-    },
-    "license": "MIT",
-    "devDependencies": {}
+  "name": "aics",
+  "version": "0.0.34",
+  "description": "AICS",
+  "dependencies": {
+    "archiver": "0.21.x",
+    "chalk": "^1.1.1",
+    "cjson": "0.3.x",
+    "foreachasync": "^5.0.5",
+    "inquirer": "^0.11.2",
+    "md5": "2.0.0",
+    "node-uuid": "^1.4.7",
+    "qs": "^6.0.2",
+    "querystring": "0.2.0",
+    "request": "2.67.0",
+    "unzip": "0.1.11",
+    "walk": "^2.3.9",
+    "walk-promise": "0.1.0",
+    "walk-sync": "^0.2.6",
+    "minimist": "^1.2.0"
+  },
+  "bin": {
+    "aics": "./bin/aics",
+    "aicsd": "./bin/dev"
+  },
+  "author": "Hannan Sun <sunhannan@fami2u.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fami2u/aics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fami2u/aics/issues",
+    "email": "sunhannan@fami2u.com"
+  },
+  "licenses": {
+    "type": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "devDependencies": {
+    "eslint": "^2.2.0",
+    "eslint-config-google": "^0.4.0",
+    "eslint-config-xo": "^0.11.0"
+  },
+  "scripts": {
+    "test": "eslint  lib/**/*.js",
+    "prepublish": "npm_scripts/empty_account.js"
+  }
 }
