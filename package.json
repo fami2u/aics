@@ -1,6 +1,6 @@
 {
   "name": "aics",
-  "version": "0.0.34",
+  "version": "0.0.37",
   "description": "AICS",
   "dependencies": {
     "archiver": "0.21.x",
