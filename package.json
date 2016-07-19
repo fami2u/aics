@@ -1,0 +1,89 @@
+{
+  "bin": {
+    "aics": "./bin/aics"
+  },
+  "name": "aics",
+  "version": "0.1.0",
+  "description": "Aics is a meteor enhancement tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava"
+  },
+  "author": {
+    "email": "qintengfei@fami2u.com",
+    "name": "qintengfei"
+  },
+  "contributors": {
+    "email": "romejiang@gmail.com",
+    "name": "Jinag Tao",
+    "url": "https://github.com/romejiang"
+  },
+  "keywords": [
+    "meteor",
+    "deploy",
+    "aics",
+    "package",
+    "manager"
+  ],
+  "homepage": "http://aics.fami2u.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fami2u/aics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fami2u/aics/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "0.21.x",
+    "async": "^1.5.0",
+    "bluebird": "^3.4.1",
+    "chalk": "^1.1.1",
+    "cjson": "^0.4.0",
+    "colors": "1.1.x",
+    "commander": "^2.9.0",
+    "config-chain": "^1.1.10",
+    "debug": "2.x.x",
+    "executive": "^1.1.5",
+    "inquirer": "^1.1.2",
+    "md5": "^2.1.0",
+    "minimist": "^1.2.0",
+    "nodemiral": "1.x.x",
+    "progress": "1.1.x",
+    "qs": "^6.0.2",
+    "read": "^1.0.7",
+    "request": "2.67.0",
+    "rimraf": "2.5.x",
+    "underscore": "1.x.x",
+    "unzip": "0.1.11",
+    "uuid": "2.x.x",
+    "walk": "^2.3.9",
+    "walk-promise": "^0.2.0",
+    "walk-sync": "^0.2.6"
+  },
+  "server": {
+    "host": "182.92.11.131",
+    "username": "root",
+    "password": "Sunhn1984",
+    "pem": "~/.ssh/id_rsa",
+    "sshOptions": {
+      "port": 22
+    },
+    "env": {}
+  },
+  "deploy": {
+    "appName": "best",
+    "env": {
+      "MONGO_URL": "mongodb://127.0.0.1:27017/best",
+      "PORT": 8181,
+      "ROOT_URL": "http://182.92.11.131:8181"
+    }
+  },
+  "notice": "Well done",
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "coveralls": "^2.11.11",
+    "nyc": "^7.0.0",
+    "tap-nyan": "0.0.2"
+  }
+}
