@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>aics 使用文档</title>
+  <subtitle>Almace Scaffolding - Super-fast Jekyll framework</subtitle>
+  <updated>2016-07-20T21:43:20+08:00</updated>
+  <id>https://fami2u.github.io/aics/_site/lab/amsf/</id>
+  <generator uri="http://sparanoid.com/lab/amsf/" version="0.1.11">Almace Scaffolding</generator>
+
+  <link rel="alternate" type="text/html" hreflang="en" href="https://fami2u.github.io/aics/_site/lab/amsf/" />
+  <link rel="self" type="application/atom+xml" href="https://fami2u.github.io/aics/_site/lab/amsf/feed.xml" />
+
+  <author>
+    <name>qintengfei</name>
+    <uri>https://fami2u.github.io/aics/_site/lab/amsf/</uri>
+    <email>qintengfei@fami2u.com</email>
+  </author>
+
+  
+    
+      
+
+      
+
+      <entry>
+        <title>命令行</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/commanders.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/commanders.html" />
+        <published>2016-07-20T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;h2 id=&quot;commanders&quot;&gt;Commanders&lt;/h2&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Commanders</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Introducing Curtana</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/theme-curtana.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/theme-curtana.html" />
+        <published>2016-06-01T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;Curtana is the default theme of &lt;a href=&quot;http://sparanoid.com/lab/amsf/&quot;&gt;AMSF&lt;/a&gt; (Almace Scaffolding).&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Curtana is the default theme of AMSF (Almace Scaffolding).</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Deployment Methods</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/deployment-methods.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/deployment-methods.html" />
+        <published>2016-03-18T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;Sites generated using Almace Scaffolding can be deployed in nearly any web hosting services. A few of the most common deployment techniques are described below. More deployment methods please refer to &lt;a href=&quot;https://jekyllrb.com/docs/deployment-methods/&quot;&gt;Jekyll - Deployment methods&lt;/a&gt;.&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Sites generated using Almace Scaffolding can be deployed in nearly any web hosting services. A few of the most common deployment techniques are described below. More deployment methods please refer to Jekyll - Deployment methods.</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Multiple Themes Support</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/multiple-themes-support.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/multiple-themes-support.html" />
+        <published>2015-08-18T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;From version 0.0.31, you can now use multiple themes in Almace Scaffolding. See &lt;a href=&quot;/lab/amsf/themes.html&quot;&gt;Themes&lt;/a&gt; for more information.&lt;/p&gt;
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>From version 0.0.31, you can now use multiple themes in Almace Scaffolding. See Themes for more information.</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Welcome</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/welcome.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/welcome.html" />
+        <published>2014-06-13T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;AMSF, a.k.a. &lt;strong&gt;Almace Scaffolding&lt;/strong&gt;, is a super-fast Jekyll framework, supports live reloading (Browsersync), Less, HTML minification, inlined stylesheets and more.&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>AMSF, a.k.a. Almace Scaffolding, is a super-fast Jekyll framework, supports live reloading (Browsersync), Less, HTML minification, inlined stylesheets and more.</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Getting Started</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/getting-started.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/getting-started.html" />
+        <published>2014-06-12T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Requirements</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Configuration</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/configuration.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/configuration.html" />
+        <published>2014-06-11T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;h2 id=&quot;configuration-settings&quot;&gt;Configuration Settings&lt;/h2&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Configuration Settings</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Syntax Highlighting</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/syntax-highlighting.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/syntax-highlighting.html" />
+        <published>2014-06-06T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;Code highlighting demo, powered by Rouge. More info about code highlighting can be found at &lt;a href=&quot;http://jekyllrb.com/docs/templates/#code-snippet-highlighting&quot;&gt;Jekyll’s documentation&lt;/a&gt;.&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Code highlighting demo, powered by Rouge. More info about code highlighting can be found at Jekyll’s documentation.</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Markdown Features Test</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/markdown-features-test.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/markdown-features-test.html" />
+        <published>2014-06-06T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;h2 id=&quot;indented-code-blocks&quot;&gt;Indented Code Blocks&lt;/h2&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Indented Code Blocks</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Markup Example</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/markup-example.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/markup-example.html" />
+        <published>2014-06-05T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;Lorem lean startup ipsum &lt;strong&gt;product market fit customer development&lt;/strong&gt; acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying &lt;a href=&quot;#&quot;&gt;crowded market&lt;/a&gt; pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor.&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>Lorem lean startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor.</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Custom HTML Markups</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/custom-html-markups.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/custom-html-markups.html" />
+        <published>2014-06-01T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;h2 id=&quot;note-store-and-download&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.note&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.store&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;.download&lt;/code&gt;&lt;/h2&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>.note, .store, and .download</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Custom Color Scheme</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/custom-color-scheme.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/custom-color-scheme.html" />
+        <published>2014-05-01T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;This is an example how to change your post color scheme for specific posts. You can simply add the following variables to your post &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front-matter field&lt;/a&gt;:&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>This is an example how to change your post color scheme for specific posts. You can simply add the following variables to your post front-matter field:</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Unique Post Styling via Custom CSS</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/custom-css.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/custom-css.html" />
+        <published>2014-04-01T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;This is an example how to change your post styling via CSS. You can simply add the &lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; option to your post &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front-matter field&lt;/a&gt;:&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>This is an example how to change your post styling via CSS. You can simply add the css option to your post front-matter field:</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>SVG Post Ttile</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/svg-post-title.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/svg-post-title.html" />
+        <published>2014-02-01T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;This is an example of custom post title using SVG image. You can simply add the following setting to your post &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front-matter field&lt;/a&gt;:&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>This is an example of custom post title using SVG image. You can simply add the following setting to your post front-matter field:</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>External Link Post</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/external-link-post.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/external-link-post.html" />
+        <published>2014-02-01T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;p&gt;This is an example of Tumblr-like external link post. You can simply add the following setting to your post &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;front-matter field&lt;/a&gt;:&lt;/p&gt;
+
+
+          
+          
+        
+          &lt;p&gt;&lt;a href=&quot;http://sparanoid.com/&quot;&gt;&lt;small&gt;◉ Direct Link to Original Site&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
+        
+      
+        </content>
+
+        
+          <summary>This is an example of Tumblr-like external link post. You can simply add the following setting to your post front-matter field:</summary>
+        
+      </entry>
+    
+  
+    
+      
+
+      
+
+      <entry>
+        <title>GitHub Pages Setup Guide</title>
+        <id>https://fami2u.github.io/aics/_site/lab/amsf/github-pages-setup.html</id>
+        <link rel="alternate" type="text/html" href="https://fami2u.github.io/aics/_site/lab/amsf/github-pages-setup.html" />
+        <published>2014-01-01T00:00:00+08:00</published>
+
+        
+          <updated>2016-07-20T20:28:40+08:00</updated>
+        
+
+        <author>
+          <name>qintengfei</name>
+          <uri>http://fami2u.com</uri>
+          <email>qintengfei@fami2u.com</email>
+        </author>
+
+        <content type="html" xml:base="https://fami2u.github.io/aics/_site/lab/amsf/">
+          
+            &lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;/h2&gt;
+
+
+          
+          
+        
+      
+        </content>
+
+        
+          <summary>The Problem</summary>
+        
+      </entry>
+    
+  
+</feed>
