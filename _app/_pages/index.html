@@ -1,0 +1,52 @@
+---
+layout: default
+title: Almace Scaffolding
+permalink: /
+---
+
+<!-- Article wrapper, limit width -->
+<article>
+
+  <!-- Post title -->
+  <header>
+
+    <h1 class="amsf-title">
+      aics 使用文档
+    </h1>
+
+    <h2>Meteor code manager & deploy command line.</h2>
+
+    <small>qintengfei <b>fami2u</b>&#x30FB;ver. <b class="amsf-version">1.0.0</b>&#x30FB;view it on <a href="https://github.com/fami2u/aics-docs">GitHub</a></small>
+  </header>
+
+  <div class="page-content">
+    <h2>简介</h2>
+    {% for post in site.tags.getting-started %}
+      {% include themes/{{ site.theme }}/includes/page-item.html %}
+    {% endfor %}
+
+    <h2>aics 命令</h2>
+    {% for post in site.tags.commanders %}
+      {% include themes/{{ site.theme }}/includes/page-item.html %}
+    {% endfor %}
+
+    <h2>开发者资源</h2>
+    {% for post in site.tags.curtana %}
+      {% include themes/{{ site.theme }}/includes/page-item.html %}
+    {% endfor %}
+
+    <h2>项目部署</h2>
+    {% for post in site.tags.deployment %}
+      {% include themes/{{ site.theme }}/includes/page-item.html %}
+    {% endfor %}
+
+    <h2>RESTful API (开发中)</h2>
+    {% for post in site.tags.miscellaneous %}
+      {% include themes/{{ site.theme }}/includes/page-item.html %}
+    {% endfor %}
+    <h2>变更日志</h2>
+    {% for post in site.tags.miscellaneous %}
+      {% include themes/{{ site.theme }}/includes/page-item.html %}
+    {% endfor %}
+  </div>
+</article>
