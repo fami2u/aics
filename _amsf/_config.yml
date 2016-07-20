@@ -80,7 +80,7 @@ description:    Almace Scaffolding - Super-fast Jekyll framework
 # the production site URL is http://sparanoid.com/lab/version/, set `base` to
 # `/lab/version/24`, without trailing slash.
 # Default:      ""
-base:           ./
+base:           .
 
 # CSS path used in templates
 # Default:      /assets
