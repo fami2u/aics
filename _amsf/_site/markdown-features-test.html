@@ -1,0 +1,525 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+
+
+  <meta charset="utf-8">
+
+
+<title>Markdown Features Test · aics 使用文档</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Define a description for better SEO result -->
+<meta name="description" content="Indented Code Blocks">
+
+<!-- Feed URL -->
+<link rel="alternate" href="/feed.xml" type="application/atom+xml">
+
+<!-- Site icons -->
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<!-- Pinned icon for Safari -->
+<link rel="mask-icon" href="/favicon.svg" color="#ff00b4">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="/assets/themes/curtana/css/app.css?assets-inline">
+
+<!-- Canonical links, avoid duplicate content problems -->
+<link rel="canonical" href="https://fami2u.github.io/aics/_site/markdown-features-test.html">
+
+<!-- DNS prefetching for static files -->
+
+
+<!-- browser-sync, don't remove this -->
+<!-- BS_INSERT -->
+
+<!-- Head hooks -->
+
+
+<!-- Open Graph and Twitter Cards support, more info: https://dev.twitter.com/docs/cards -->
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="aics 使用文档">
+<meta property="og:title" content="Markdown Features Test">
+<meta property="og:url" content="https://fami2u.github.io/aics/_site/markdown-features-test.html">
+<meta property="og:description" content="Indented Code Blocks">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown Features Test">
+<meta name="twitter:url" content="https://fami2u.github.io/aics/_site/markdown-features-test.html">
+<meta name="twitter:description" content="Indented Code Blocks">
+
+
+  <meta property="article:published_time" content="2014-06-06T00:00:00+08:00">
+  <meta property="article:modified_time" content="1970-01-01T08:00:00+08:00">
+
+  <meta name="twitter:label1" value="Words">
+  <meta name="twitter:data1" value="430 words">
+  <meta name="twitter:label2" value="Reading time">
+  <meta name="twitter:data2" value="2 mins">
+
+
+
+  <meta name="twitter:site" content="@fami2u">
+
+
+
+  <meta name="twitter:creator" content="@tunghsiao">
+
+
+
+
+<!-- Post / page specified styles -->
+
+
+<!-- Post specified styles -->
+<style data-assets-inline="">
+  /*
+    TODO: You have to speicify background color for `html` in order to make `-webkit-filter` work
+    Link: https://bugs.chromium.org/p/chromium/issues/detail?id=591015
+    Date: Mar 1, 2016, 5:41 PM
+  */
+  html {
+    
+  }
+
+  body {
+    
+
+    
+
+    
+  }
+
+  
+
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+
+  /*
+    TODO: Need a better solution. I have to redefine the whole box-shadow here because no invidual box-shadow-color exists
+    Date: Mar 12, 2016, 12:09 AM
+  */
+  
+
+  
+
+  
+
+  
+</style>
+
+<!-- Main navigation with current page / categoriy highlighted -->
+<nav class="navigation">
+  <ul>
+    
+      
+      <li>
+        <a href="/">
+          
+            aics 使用文档
+          
+        </a>
+      </li>
+    
+      
+      <li>
+        <a href="/news/">
+          
+            News
+          
+        </a>
+      </li>
+    
+      
+      <li>
+        <a href="/about/">
+          
+            About
+          
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+<!-- Main content wrap -->
+<main class="content " role="main">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Post-wide custom CSS -->
+
+  
+
+
+<!-- Prepare for image headers -->
+
+
+<!-- Prepare for SVG header -->
+
+
+
+
+
+
+
+
+
+
+<!-- Article wrapper, limit width -->
+<article>
+
+  <!-- Post title -->
+  <header>
+
+    <h1 class="
+  
+" title="Markdown Features Test" data-title="Markdown Features Test">
+      
+  
+    
+  
+    Markdown Features Test<span class="dot dot--post"> </span>
+  
+
+  
+
+    </h1>
+
+    
+      <small>
+        By <span rel="author">qintengfei</span>
+        on <time datetime="2014-06-06T00:00:00+08:00">Jun 6, 2014</time>
+      </small>
+    
+
+    
+
+  </header>
+
+  <!-- Post content -->
+  <div class="post-content">
+    <h2 id="indented-code-blocks">Indented Code Blocks</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+</code></pre>
+</div>
+
+<h2 id="liquid-tag-with-linenos-support">Liquid Tag with <code class="highlighter-rouge">linenos</code> Support</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">show</span>
+  <span class="vi">@widget</span> <span class="o">=</span> <span class="no">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+  <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">html</span> <span class="c1"># show.html.erb</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">json</span> <span class="p">{</span> <span class="n">render</span> <span class="ss">json: </span><span class="vi">@widget</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="gfm-code-blocks-fencedcodeblocks">GFM Code Blocks (<code class="highlighter-rouge">fenced_code_blocks</code>)</h2>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* Background color function */</span>
+<span class="nc">.code-bg</span> <span class="o">(</span><span class="k">@v</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">lightness</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">)</span> <span class="err">&gt;=</span> <span class="m">50%</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@return-bg</span><span class="p">:</span> <span class="nb">mix</span><span class="p">(</span><span class="m">#000</span><span class="p">,</span> <span class="n">lighten</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">,</span> <span class="m">30%</span><span class="p">),</span> <span class="m">10%</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.code-bg</span> <span class="o">(</span><span class="k">@v</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">lightness</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">)</span> <span class="err">&lt;</span> <span class="m">50%</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@return-bg</span><span class="p">:</span> <span class="nb">mix</span><span class="p">(</span><span class="m">#fff</span><span class="p">,</span> <span class="n">darken</span><span class="p">(</span><span class="err">@</span><span class="n">v</span><span class="p">,</span> <span class="m">10%</span><span class="p">),</span> <span class="m">70%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="smartypants">SmartyPants</h3>
+
+<p class="leading-indent-fix leading-indent-fix--double-quotes">“Aha! What’s up, man?” – Jony said.</p>
+
+<h2 id="tables">Tables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Upvotes</th>
+      <th>Downvotes</th>
+      <th>Abstentions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>10</td>
+      <td>11</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>4</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Charlie</td>
+      <td>7</td>
+      <td>9</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Totals</td>
+      <td>21</td>
+      <td>23</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="intra-emphasis">Intra-emphasis</h2>
+
+<p>foo_bar_baz</p>
+
+<h2 id="auto-link">Auto-link</h2>
+
+<p>http://sparanoid.com/</p>
+
+<h2 id="strikethroughs">Strikethroughs</h2>
+
+<p>This is <del>good</del> bad.</p>
+
+<h2 id="space-after-headers">Space after Headers</h2>
+
+<p>###This is not a header.</p>
+
+<h2 id="superscripts">Superscripts</h2>
+
+<p>This is the 2^(nd) time.</p>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<p>This<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> is<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> a sentence<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>.</p>
+
+<h2 id="id-ri-ben-yu-taitoru">ID 日本語タイトル</h2>
+
+<p>Expected id should be <code class="highlighter-rouge">id-ri-ben-yu-taitoru</code>.</p>
+
+<h2 id="id-zhong-wen-biao-ti-">ID 中文標題</h2>
+
+<p>Expected id should be <code class="highlighter-rouge">id-zhong-wen-biao-ti</code>.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Lorem lean startup ipsum <strong>product market fit customer development</strong> acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying <a href="#">crowded market</a> pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor. <a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://blog.readability.com/2012/06/announcement/">An Important Announcement</a> by Richard Ziade at Readability <a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Good afterble constanoon, this sweet hongi is as bung as a stuffed morepork. Mean while, in the marae, Dr Ropata and Hairy Maclary from Donaldson’s Dairy were up to no good with a bunch of bloody troties. <a href="#fnref:3" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    
+    
+
+    
+  </div>
+
+</article>
+
+
+</main>
+
+<!-- Footer section -->
+
+  <footer class="footer">
+    <ul>
+      <li><a href="/">aics 使用文档</a></li>
+
+      
+        <li><a href="http://sparanoid.com/lab/amsf/" title="Almace Scaffolding">AMSF</a></li>
+        <li><a href="http://sparanoid.com/lab/amsf/theme-curtana.html" title="Curtana">Curtana</a></li>
+      
+
+      
+
+      <li><a href="/feed.xml" title="Feed - Atom (The Atom Syndication Format)">Atom</a></li>
+    </ul>
+  </footer>
+
+
+<!-- The following code is an example use of including external JavaScript libraries -->
+
+
+<!-- Theme scripts -->
+<script src="/assets/themes/curtana/js/app.js?assets-inline"></script>
+
+<!-- User custom scripts -->
+<script src="/assets/js/user.js?assets-inline"></script>
+
+<!-- Google Analytics tracking code -->
+
+  
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-80332582-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  
+
+
+<!-- Foot hooks -->
+
+
+

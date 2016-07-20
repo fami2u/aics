@@ -1,0 +1,422 @@
+[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    {
+      "title": "命令行",
+      "permalink": "https://fami2u.github.io/aics/_site/commanders.html",
+      "link": "https://fami2u.github.io/aics/_site/commanders.html",
+      "date": "2016-07-20T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Commanders\n\n\n    deploy [options] &lt;project&gt; &lt;key&gt;      一键部署应用到服务器\n    setup                                 初始化私有服务器环境及依赖软件\n    push                                  部署项目到私有服务器\n    logs [options]                        打印服务器日志\n    mongo                                 连接远程数据库\n    adduser                               登录 aics CLI\n    whoami                                显示 aics 登录用户信息\n    init [options]                        生成aics配置文件\n    add [name]                            添加 aics 代码包 代码包地址: http://code.fami2u.com/\n    update [options]                      更新项目或代码包依赖\n    publish [options]                     发布aics项目或组件\n    addfile [options]                     添加文件到组件\n    lsfile [options]                      显示指定代码包中的文件\n\n\n\n\n\n  \n    aics -v\n  \n\n\nUsage: aics -v\n  显示当前 aics 版本号\n\n\n\n\n\n  \n    aics --help\n  \n\n\nUsage: aics --help\n  显示 aics 所有的命令行\n\n\n\n\n\n  \n    aics deploy\n  \n\n\nUsage: deploy [options] &lt;project&gt; &lt;key&gt;\nDeployment this project to fami2x.com microhost\n\n  Options:\n    -h, --help                                    output usage information\n    -m, --mobile-settings &lt;mobile-settings.json&gt;  Set mobile-settings from json file\n    -s, --server-only                             server only\n    -e, --env &lt;env.json&gt;                          Set environment variables from json file\n    -d, --debug                                   debug mode\n\n  Examples:\n    $ aics deploy appName  # Deployment to http://appName.aics.cn \n    $ aics deploy appName --env env.json\n\n\n\n\n  \n    aics setup\n  \n\n\n  Usage: setup [options]\n  Configuration runtime environments on private server\n\n  Options:\n    -h, --help  output usage information\n\n  Examples:\n    $ aics setup #  configuration your server\n\n\n\n\n\n  \n    aics push\n  \n\n\n  Usage: push [options]\n  Deployment a project to private server\n\n  Options:\n    -h, --help                                    output usage information\n    -m, --mobile-settings &lt;mobile-settings.json&gt;  Set mobile-settings from json file\n    -s, --server-only                             server only\n    -d, --debug                                   debug mode\n\n  Examples:\n    $ aics push  # config package.js \n    $ aics push\n\n\n\n\n  \n    aics logs\n  \n\n\n  Usage: logs [options]\n  Print logs on server\n\n  Options:\n    -h, --help           output usage information\n    -l, --lines &lt;lines&gt;  output the last N lines, instead of the last 50 by default\n\n  Examples:\n    $ aics logs  \n    $ aics logs -t 100\n\n\n\n\n  \n    aics mongo\n  \n\n\n  Usage: mongo [options]\n  Connection to a remote mongo database\n\n  Options:\n    -h, --help  output usage information\n\n  Examples:\n    $ aics mongo\n\n\n\n\n  \n    aics adduser\n  \n\n\n  Usage: adduser [options]\n  登录aics cli\n\n  Options:\n    -h, --help  output usage information\n\n  Examples:\n    $ aics adduser\n\n\n\n\n  \n    aics whoami\n  \n\n\n  Usage: whoami [options]\n  显示 aics 登录用户信息\n\n  Options:\n    -h, --help  output usage information\n\n  Examples:\n    $ aics whoami\n\n\n\n\n  \n    aics init\n  \n\n\n  Usage: init [options]\n  生成aics配置文件\n\n  Options:\n    -h, --help            output usage information\n    -p, --project &lt;name&gt;  generate aics project conf\n    -e, --example &lt;name&gt;  generate project from example project conf\n\n  Examples:\n    $ aics init -p [name] # 创建新的aics项目\n    $ aics init -e [name] # 根据 name 生成一个项目\n    $ aics init [name] # 生成一个 名为 name 代码包项目 \n\n\n\n\n  \n    aics add\n  \n\n\n  Usage: add [options] [packagename]\n  添加名为 packagename 的 aics 代码包 代码包地址: http://code.fami2u.com/\n\n  Options:\n    -h, --help  output usage information\n\n  Examples:\n    $ aics add fami:readme\n\n\n\n\n  \n    aics update\n  \n\n\n  Usage: update [options]\n\n  更新项目或代码包依赖\n\n  Options:\n    -h, --help        output usage information\n    -a, --all &lt;path&gt;  update all packages in .aics/packages.json\n\n  Examples:\n    $ aics update -a # 更新项目依赖的代码包的版本\n    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包的版本\n\n\n\n\n  \n    aics publish\n  \n\n\n  Usage: publish [options]\n  发布aics项目或组件\n\n  Options:\n    -h, --help            output usage information\n    -p, --project &lt;name&gt;  发布解决方案（项目）\n\n  Examples:\n    $ aics publish -p [name] # 发布名为 [name] 的 aics 项目\n    $ aics publish [name] # 发布名为 [name] 的 aics 代码包\n\n\n\n\n  \n    aics addfile\n  \n\n\n  Usage: addfile [options]\n  添加文件到组件\n\n  Options:\n    -h, --help           output usage information\n    -f, --file &lt;path&gt;    文件名或目录\n    -t, --target &lt;name&gt;  添加到的组件名称\n\n  Examples:\n    $ aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包\n\n\n\n\n  \n    aics lsfile\n  \n\n\n  Usage: lsfile [options]\n  显示指定代码包中的文件\n\n  Options:\n    -h, --help           output usage information\n    -t, --target &lt;name&gt;  组件名称\n\n  Examples:\n    $ aics lsfile -t depot # 显示 depot 代码包中的文件\n\n\n\n配置文件示例\n\n\n  aics 部署项目到私有服务器\n\n\n\n    \"server\": {\n        \"host\": \"182.92.11.131\",\n        \"username\": \"root\",\n        \"//password\": \"password\",\n        \"//\":\" or pem file (ssh based authentication)\",\n        \"//\": \"WARNING: Keys protected by a passphrase are not supported\",\n        \"pem\": \"~/.ssh/id_rsa\",\n        \"//\":\" Also, for non-standard ssh port use this\",\n        \"sshOptions\": { \"port\" : 22 },\n        \"//\":\" server specific environment variables\",\n        \"env\": {}\n    },\n    \"setup\": {\n        \"//\": \"Install MongoDB on the server. Does not destroy the local MongoDB on future setups\",\n        \"mongo\": true,\n        \"//\": \"Application server path .  must in /usr /opt /home /alidata directory.\",\n        \"path\": \"/usr/local/meteorup\"\n    },\n    \"deploy\": {\n        \"//\": \"Application name (no spaces).\",\n        \"appName\": \"best\",\n        \"//\": \"Configure environment\",\n        \"//\": \"ROOT_URL must be set to your correct domain (https or http)\",\n        \"env\": {\n            \"YJENV\": \"test\", // customize environment\n            \"MONGO_URL\": \"mongodb://127.0.0.1:27017/best\",\n            \"PORT\": 8181,\n            \"ROOT_URL\": \"http://182.92.11.131:8181\"\n        }\n    }\n\n\n\n\n\n  aics 初始化项目配置文件\n\n\n├── ROOT_PATH/\n|   ├── .aics/\n|   |   └── project.json\n|   |   └── packages.json\n|   ├── ...\n\n\n\nproject.json\n\n{\n  \"name\": \"\",\n  \"stack\": \"\",\n  \"type\": \"project\",\n  \"version\": \"0.0.1\",\n  \"summary\": \"\",\n  \"git\": \"\",\n  \"documentation\": \"README.md\",\n  \"dependencies\": {},\n  \"packages\": {},\n  \"npm\": {}\n}\n\n\n\n\n  aics 初始化 代码包配置文件\n\n\n├── ROOT_PATH/\n|   ├── .aics/\n|   |   └── [x].depot.json\n|   |   └── packages.json\n|   ├── ...\n\n\n\n[x].depot.json\n\n{\n    \"stack\": \"\",\n    \"name\": \"\",\n    \"version\": \"0.0.1\",\n    \"summary\": \"\",\n    \"git\": \"\",\n    \"documentation\": \"README.md\",\n    \"dependencies\": {},\n    \"packages\": [],\n    \"npm\": {},\n    \"files\": []\n  }\n\n\n\nFeedBack\n使用过程中如果遇到问题 , 请提交 ISSUE\n\n",
+      "excerpt": "Commanders\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["commanders"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Introducing Curtana",
+      "permalink": "https://fami2u.github.io/aics/_site/theme-curtana.html",
+      "link": "https://fami2u.github.io/aics/_site/theme-curtana.html",
+      "date": "2016-06-01T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Curtana is the default theme of AMSF (Almace Scaffolding).\n\nFeatures\n\n\n  A variant of sparanoid.com, looking great on any modern browsers\n  Minimalism design, No jQuery, no everybody-shake-ur-body.js\n  Ideal for personal blog, portfolio, product blog and Tumblr-like link blog\n  (Maybe) the first template that uses viewport relative units\n  Handcrafted stylesheets. No Bootstrap or other bloated frameworks are used, unminified CSS &lt; 12 KB\n  Predefined Less variables make it easier to change color schemes for posts\n  Dynamic color scheme for code highlighters powered by Randomized\n  Open Graph and Twitter Cards support\n  No Internet Explorer support\n\n",
+      "excerpt": "Curtana is the default theme of AMSF (Almace Scaffolding).\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["curtana"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Deployment Methods",
+      "permalink": "https://fami2u.github.io/aics/_site/deployment-methods.html",
+      "link": "https://fami2u.github.io/aics/_site/deployment-methods.html",
+      "date": "2016-03-18T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Sites generated using Almace Scaffolding can be deployed in nearly any web hosting services. A few of the most common deployment techniques are described below. More deployment methods please refer to Jekyll - Deployment methods.\n\nWeb Hosting Providers (FTP/SFTP)\n\nJust about any traditional web hosting provider will let you upload files to their servers over FTP. You can simply run the grunt build command and upload all files generated under _site to the HTTP root folder of your hosting account.\n\nrsync\n\nThere’s a _deploy.yml at the root of your AMSF project containing a basic rsync configurations. Change these configurations to yours and then run:\n\n$ grunt --deploy=rsync\n\n\n",
+      "excerpt": "Sites generated using Almace Scaffolding can be deployed in nearly any web hosting services. A few of the most common deployment techniques are described below. More deployment methods please refer to Jekyll - Deployment methods.\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["deployment"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Multiple Themes Support",
+      "permalink": "https://fami2u.github.io/aics/_site/multiple-themes-support.html",
+      "link": "https://fami2u.github.io/aics/_site/multiple-themes-support.html",
+      "date": "2015-08-18T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "From version 0.0.31, you can now use multiple themes in Almace Scaffolding. See Themes for more information.\n",
+      "excerpt": "From version 0.0.31, you can now use multiple themes in Almace Scaffolding. See Themes for more information.\n",
+      "languages": null,
+      "categories": ["news"],
+      "tags": []
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Welcome",
+      "permalink": "https://fami2u.github.io/aics/_site/welcome.html",
+      "link": "https://fami2u.github.io/aics/_site/welcome.html",
+      "date": "2014-06-13T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "AMSF, a.k.a. Almace Scaffolding, is a super-fast Jekyll framework, supports live reloading (Browsersync), Less, HTML minification, inlined stylesheets and more.\n\n\n  Getting Started &#x27A1;&#xfe0e;\n\n\nGo to the GitHub page for downloads, bug reports, and feature requests.\n\nFeatures\n\n\n  Theme switching, you can switch themes with just one command\n  A basic, fully configured Jekyll setup with well-defined Atom feed and sitemap\n  Almace Scaffolding ships a sleek responsive theme Curtana, a variant of sparanoid.com, looking great on any modern browsers\n  Every minified page generates only one HTTP request 1\n  Tons of configurable settings for your posts and site customization\n  Built with Grunt.js for easy development\n  Travis support\n\n\n\n  \n    \n      Based on the theme you’re using, theme Curtana generates only one HTTP request for production build when your posts don’t have fancy sliders or other external media files. &#8617;&#xfe0e;\n    \n  \n\n",
+      "excerpt": "AMSF, a.k.a. Almace Scaffolding, is a super-fast Jekyll framework, supports live reloading (Browsersync), Less, HTML minification, inlined stylesheets and more.\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["getting-started"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Getting Started",
+      "permalink": "https://fami2u.github.io/aics/_site/getting-started.html",
+      "link": "https://fami2u.github.io/aics/_site/getting-started.html",
+      "date": "2014-06-12T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Requirements\n\nAlmace Scaffolding has exactly the same requirements as Jekyll. For more info please refer to Installation - Jekyll.\n\nQuick Start\n\n\n  Fork or clone the repo.\n  Install dependencies with Ruby gem bundler and Node.js package manager npm.\n  Run grunt init to initialize your project.\n  Run grunt serve to fire up a local server.\n\n\nSo in short for geeks:\n\n$ git clone git@github.com:sparanoid/almace-scaffolding.git\n$ bundle install &amp;&amp; npm install\n$ grunt init\n$ grunt serve\n\n\n\nDownload\n\nGo to the GitHub repository for downloads, bug reports, and feature requests.\n\nTransfer from Jekyll\n\nYou can simply copy all posts from your old Jekyll setup into _app/_posts, you can also transfer your custom pages into _app/_pages/.\n\nUpgrading\n\nIt will be easy if you’re a casual blogger and keep every core and template file untouched. You can use the following command to update Almace Scaffolding core files:\n\n$ grunt amsf-update\n\n\n\nIt checks the latest Almace Scaffolding build from GitHub and update core files automatically. Please keep in mind that if you changed some of the AMSF core files this action will override the changes you made. So it’s recommended to keep your project under version control, you will be always be able to compare changes for Almace Scaffolding.\n",
+      "excerpt": "Requirements\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["getting-started"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Configuration",
+      "permalink": "https://fami2u.github.io/aics/_site/configuration.html",
+      "link": "https://fami2u.github.io/aics/_site/configuration.html",
+      "date": "2014-06-11T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Configuration Settings\n\n\n  All AMSF built-in settings can be configured at _config.yml.\n  Theme specific variables can be found at ./_app/_data/theme-name.yml.\n  Additional variables are stored in ./_app/_data/ directory. They can be accessed by Jekyll. (More info)\n  You should also change favicon.* and apple-touch-icon.png to yours.\n  More customization please refer to theme specific documentation\n\n\nTips\n\n\n  Not familiar with Markdown? Try Markdown Cheatsheet.\n  You can use Jekyll’s built-in syntax highlighting, I’ve included a default theme for this project.\n  Tables and footnotes are also available to use.\n\n",
+      "excerpt": "Configuration Settings\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["getting-started"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Syntax Highlighting",
+      "permalink": "https://fami2u.github.io/aics/_site/syntax-highlighting.html",
+      "link": "https://fami2u.github.io/aics/_site/syntax-highlighting.html",
+      "date": "2014-06-06T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Code highlighting demo, powered by Rouge. More info about code highlighting can be found at Jekyll’s documentation.\n\ndef show\n  @widget = Widget(params[:id])\n  respond_to do |format|\n    format.html # show.html.erb\n    format.json { render json: @widget }\n  end\nend\n\n\n\ndef print_hi(name)\n  puts \"Hi, #{name}\"\nend\nprint_hi('Tom')\n#=&gt; prints 'Hi, Tom' to STDOUT.\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12&lt;!doctype html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Title!&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1 id=\"title\" class=\"heading\"&gt;Example&lt;/h1&gt;\n    &lt;p id=\"foo\"&gt;Hello, World!&lt;/p&gt;\n    &lt;script type=\"text/javascript\"&gt;var a = 1;&lt;/script&gt;\n    &lt;style type=\"text/css\"&gt;#foo { font-weight: bold; }&lt;/style&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n\n\n// Load the http module to create an http server.\nvar http = require('http');\n\n// Configure our HTTP server to respond with Hello World to all requests.\nvar server = http.createServer(function (request, response) {\n  response.writeHead(200, {\"Content-Type\": \"text/plain\"});\n  response.end(\"Hello World\\n\");\n});\n\n// Listen on port 8000, IP defaults to 127.0.0.1\nserver.listen(8000);\n\n// Put a friendly message on the terminal\nconsole.log(\"Server running at http://127.0.0.1:8000/\");\n\n\n\n.code-text (@link, @text) when (lightness(@link) &gt;= 50%) and (lightness(@link) &lt; lightness(@text)) {\n  @return-color: lighten(@text, 20%);\n  @return-value: 30%;\n}\n\n\n\n&lt;!doctype html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;title&gt;Title!&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1 id=\"title\" class=\"heading\"&gt;Example&lt;/h1&gt;\n    &lt;p id=\"foo\"&gt;Hello, World!&lt;/p&gt;\n    &lt;script type=\"text/javascript\"&gt;var a = 1;&lt;/script&gt;\n    &lt;style type=\"text/css\"&gt;#foo { font-weight: bold; }&lt;/style&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n\n\n\n; copied from http://llvm.org/docs/LangRef.html#module-structure\n; Declare the string constant as a global constant.\n@.str = private unnamed_addr constant [13 x i8] c\"hello world\\0A\\00\"\n\n; External declaration of the puts function\ndeclare i32 @puts(i8* nocapture) nounwind\n\n; Definition of main function\ndefine i32 @main() {   ; i32()*\n  ; Convert [13 x i8]* to i8  *...\n  %cast210 = getelementptr [13 x i8]* @.str, i64 0, i64 0\n\n  ; Call puts function to write out the string to stdout.\n  call i32 @puts(i8* %cast210)\n  ret i32 0\n}\n\n; Named metadata\n!1 = metadata !{i32 42}\n!foo = !{!1, null}\n\n\n\n&lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;\n&lt;xsl:template match=\"/\"&gt;&lt;/xsl:template&gt;\n\n\n\nutil = require \"my.module\"\n\na_table = {\n  foo: 'bar'\n  interpolated: \"foo-#{other.stuff 2 + 3}\"\n  \"string\": 2\n  do: 'keyword'\n}\n\nclass MyClass extends SomeClass\n  new: (@init, arg2 = 'default') =&gt;\n    @derived = @init + 2\n    super!\n\n  other: =&gt;\n    @foo + 2\n\n\n\nAddDefaultCharset UTF-8\n\nRewriteEngine On\n\n# Serve gzipped version if available and accepted\nAddEncoding x-gzip .gz\nRewriteCond %{HTTP:Accept-Encoding} gzip\nRewriteCond %{REQUEST_FILENAME}.gz -f\nRewriteRule ^(.*)$ $1.gz [QSA,L]\n&lt;FilesMatch \\.css\\.gz$&gt;\n  ForceType text/css\n  Header append Vary Accept-Encoding\n&lt;/FilesMatch&gt;\n&lt;FilesMatch \\.js\\.gz$&gt;\n  ForceType application/javascript\n  Header append Vary Accept-Encoding\n&lt;/FilesMatch&gt;\n&lt;FilesMatch \\.html\\.gz$&gt;\n  ForceType text/html\n  Header append Vary Accept-Encoding\n&lt;/FilesMatch&gt;\n\n\n\ndiff(plus(A,B), X, plus(DA, DB))\n   &lt;= diff(A, X, DA) and diff(B, X, DB).\n\ndiff(times(A,B), X, plus(times(A, DB), times(DA, B)))\n   &lt;= diff(A, X, DA) and diff(B, X, DB).\n\nequal(X, X).\ndiff(X, X, 1).\ndiff(Y, X, 0) &lt;= not equal(Y, X).\n\n\n\n(* Binary tree with leaves car­rying an integer. *)\ntype tree = Leaf of int | Node of tree * tree\n\nlet rec exists_leaf test tree =\n  match tree with\n  | Leaf v -&gt; test v\n  | Node (left, right) -&gt;\n      exists_leaf test left\n      || exists_leaf test right\n\nlet has_even_leaf tree =\n  exists_leaf (fun n -&gt; n mod 2 = 0) tree\n\n\n\nSELECT * FROM `users` WHERE `user`.`id` = 1\n\n\n\nquadMultiply: i1 and: i2\n    \"This method multiplies the given numbers by each other\n    and the result by 4.\"\n    | mul |\n    mul := i1 * i2.\n    ^mul * 4\n\n\n\n#lang racket\n\n;; draw a graph of cos and deriv^3(cos)\n(require plot)\n(define ((deriv f) x)\n  (/ (- (f x) (f (- x 0.001))) 0.001))\n(define (thrice f) (lambda (x) (f (f (f x)))))\n(plot (list (function ((thrice deriv) sin) -5 5)\n            (function cos -5 5 #:color 'blue)))\n\n;; Print the Greek alphabet\n(for ([i (in-range 25)])\n  (displayln\n   (integer-&gt;char\n    (+ i (char-&gt;integer #\\u3B1)))))\n\n;; An echo server\n(define listener (tcp-listen 12345))\n(let echo-server ()\n  (define-values (in out) (tcp-accept listener))\n  (thread (λ ()\n             (copy-port in out)\n             (close-output-port out)))\n  (echo-server))\n\n\n\nservice { 'ntp':\n  name      =&gt; $service_name,\n  ensure    =&gt; running,\n  enable    =&gt; true,\n  subscribe =&gt; File['ntp.conf'],\n}\n\n\n\nvoid main() {\n  var collection=[1,2,3,4,5];\n  for(var a in collection){\n    print(a);\n  }\n}\n\n\n\nproc cross_sum {s} {expr [join [split $s \"\"] +]}\n\n\n\n// reverse byte order (16-bit)\npublic static UInt16 ReverseBytes(UInt16 value)\n{\n  return (UInt16)((value &amp; 0xFFU) &lt;&lt; 8 | (value &amp; 0xFF00U) &gt;&gt; 8);\n}\n\n\n\nPrivate Sub Form_Load()\n    ' Execute a simple message box that says \"Hello, World!\"\n    MsgBox \"Hello, World!\"\nEnd Sub\n\n\n\ndef fib(n):    # write Fibonacci series up to n\n    \"\"\"Print a Fibonacci series up to n.\"\"\"\n    a, b = 0, 1\n    while a &lt; n:\n        print a,\n        a, b = b, a+b\n\n\n\n#!/usr/bin/env perl\nuse warnings;\nprint \"a: \";\nmy $a = \"foo\";\nprint $a;\n\n\n\nMarkdown has cool [reference links][ref 1]\nand [regular links too](http://example.com)\n\n[ref 1]: http://example.com\n\n\n\n- name: set PHP-FPM parameters\n  lineinfile:\n    dest: /etc/php-fpm.conf\n    regexp: \"^\"\n    insertafter: \"^;\"\n    line: \" = \"\n  with_items:\n    - { param: 'error_log', value: '/var/log/php-fpm/error.log' }\n    - { param: 'log_level', value: 'error' }\n    - { param: 'emergency_restart_threshold', value: '10' }\n\n\n",
+      "excerpt": "Code highlighting demo, powered by Rouge. More info about code highlighting can be found at Jekyll’s documentation.\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["miscellaneous"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Markdown Features Test",
+      "permalink": "https://fami2u.github.io/aics/_site/markdown-features-test.html",
+      "link": "https://fami2u.github.io/aics/_site/markdown-features-test.html",
+      "date": "2014-06-06T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Indented Code Blocks\n\ndef show\n  @widget = Widget(params[:id])\n  respond_to do |format|\n    format.html # show.html.erb\n    format.json { render json: @widget }\n  end\nend\n\n\n\nLiquid Tag with linenos Support\n\n1\n2\n3\n4\n5\n6\n7def show\n  @widget = Widget(params[:id])\n  respond_to do |format|\n    format.html # show.html.erb\n    format.json { render json: @widget }\n  end\nend\n\n\nGFM Code Blocks (fenced_code_blocks)\n\n/* Background color function */\n.code-bg (@v) when (lightness(@v) &gt;= 50%) {\n  @return-bg: mix(#000, lighten(@v, 30%), 10%);\n}\n.code-bg (@v) when (lightness(@v) &lt; 50%) {\n  @return-bg: mix(#fff, darken(@v, 10%), 70%);\n}\n\n\n\nSmartyPants\n\n“Aha! What’s up, man?” – Jony said.\n\nTables\n\n\n  \n    \n      Name\n      Upvotes\n      Downvotes\n      Abstentions\n    \n  \n  \n    \n      Alice\n      10\n      11\n      2\n    \n    \n      Bob\n      4\n      3\n      1\n    \n    \n      Charlie\n      7\n      9\n      4\n    \n    \n      Totals\n      21\n      23\n      7\n    \n  \n\n\nIntra-emphasis\n\nfoo_bar_baz\n\nAuto-link\n\nhttp://sparanoid.com/\n\nStrikethroughs\n\nThis is good bad.\n\nSpace after Headers\n\n###This is not a header.\n\nSuperscripts\n\nThis is the 2^(nd) time.\n\nFootnotes\n\nThis1 is2 a sentence3.\n\nID 日本語タイトル\n\nExpected id should be id-ri-ben-yu-taitoru.\n\nID 中文標題\n\nExpected id should be id-zhong-wen-biao-ti.\n\n\n  \n    \n      Lorem lean startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor. &#8617;&#xfe0e;\n    \n    \n      An Important Announcement by Richard Ziade at Readability &#8617;&#xfe0e;\n    \n    \n      Good afterble constanoon, this sweet hongi is as bung as a stuffed morepork. Mean while, in the marae, Dr Ropata and Hairy Maclary from Donaldson’s Dairy were up to no good with a bunch of bloody troties. &#8617;&#xfe0e;\n    \n  \n\n",
+      "excerpt": "Indented Code Blocks\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["miscellaneous"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Markup Example",
+      "permalink": "https://fami2u.github.io/aics/_site/markup-example.html",
+      "link": "https://fami2u.github.io/aics/_site/markup-example.html",
+      "date": "2014-06-05T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "Lorem lean startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor.\n\n\n  Two days ago the Chinese website Taobao held a discount promotion to celebrate what’s known as “double sticks day” in China. In a single 24hr period, they conducted 19bn RMB (US$3.06bn) of business.\n  \n    Chris West\n  \n\n\n\n  Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.\n\n\nGood afterble constanoon, this sweet hongi is as bung as a stuffed morepork. Mean while, in the marae, Dr Ropata and Hairy Maclary from Donaldson’s Dairy were up to no good with a bunch of bloody troties.\n\nInline HTML elements\n\nHTML defines a long list of available inline tags, a complete list of which can be found on the Mozilla Developer Network.\n\n\n  To bold text, use &lt;strong&gt;.\n  To italicize text, use &lt;em&gt;.\n  Abbreviations, like HTML should use &lt;abbr&gt;, with an optional title attribute for the full phrase.\n  Citations, like — Tunghsiao Liu &amp; Mark otto, should use &lt;cite&gt;.\n  Deleted text should use &lt;del&gt; and inserted text should use &lt;ins&gt;.\n  Superscript text uses &lt;sup&gt; and subscript text uses &lt;sub&gt;.\n\n\n\n\n\n  With the exception of Nietzsche, no other madman has contributed so much to human sanity as has Louis Althusser. He is mentioned twice in the Encyclopaedia Britannica as someone’s teacher. There could be no greater lapse: for two important decades (the 60s and the 70s), Althusser was at the eye of all the important cultural storms. He fathered quite a few of them.\n  This newly-found obscurity forces me to summarize his work before suggesting a few (minor) modifications to it.\n    \n      Society consists of practices: economic, political and ideological.\n        \n          Althusser defines a practice as:\n          “Any process of transformation of a determinate product, affected by a determinate human labour, using determinate means (of production)”\n            \n              The economic practice (the historically specific mode of production) transforms raw materials to finished products using human labour and other means of production, all organized within defined webs of inter-relations. The political practice does the same with social relations as the raw materials. Finally, ideology is the transformation of the way that a subject relates to his real life conditions of existence.\n                \n                  This is a rejection of the mechanistic worldview (replete with bases and superstructures). It is a rejection of the Marxist theorization of ideology. It is a rejection of the Hegelian fascist “social totality”. It is a dynamic, revealing, modern day model.\n                  “The objective internal reference … the system of questions commanding the answers given”\n                \n              \n              Subjects to what? The answer: to the material practices of the ideology. This (the creation of subjects) is done by the acts of “hailing” or “interpellation”. These are acts of attracting attention (hailing) , forcing the individuals to generate meaning (interpretation) and making them participate in the practice.\n                \n                  Subjects to what? The answer: to the material practices of the ideology. This (the creation of subjects) is done by the acts of “hailing” or “interpellation”. These are acts of attracting attention (hailing) , forcing the individuals to generate meaning (interpretation) and making them participate in the practice.\n                  What happens in a pluralistic environment rich in competing ideologies?\n                    \n                      Clarifying the HOW, though, does not shed light on the WHY.\n                        \n                          is the fact that in the new one, the second text is articulated with the lapses in the first text … (Marx measures) the problematic contained\n                        \n                      \n                    \n                  \n                \n              \n              Ideology is a practice with lived and material dimensions. It has costumes, rituals, behaviour patterns, ways of thinking. The State employs Ideological Apparatuses (ISAs) to reproduce ideology through practices and productions: (organized) religion, the education system, the family, (organized) politics, the media, the industries of culture.\n            \n          \n        \n      \n    \n  \n  These theoretical tools were widely used to analyze the Advertising and the film industries.\n\n\n\n  Ordered list\n  Ordered list\n    \n      Ordered list\n        \n          Ordered list\n          Ordered list\n            \n              Ordered list\n                \n                  Ordered list\n                  Ordered list\n                \n              \n              Ordered list\n                \n                  Ordered list\n                \n              \n              Ordered list\n            \n          \n        \n      \n      Ordered list\n        \n          Ordered list\n          Ordered list\n        \n      \n    \n  \n  Ordered list\n\n\n\n\n“This should be replaced.”\n\n“This should be replaced.”\n\nThis is a normal paragraph.\n\n‘This should be replaced.’\n\n‘This should be replaced.’\n\nThis is a normal paragraph.\n\n「This should be replaced.」\n\n「This should be replaced.」\n\nThis is a normal paragraph.\n\n『This should be replaced.』\n\n『This should be replaced.』\n\nThis is a normal paragraph.\n\n（This should be replaced.）\n\n（This should be replaced.）\n\nThis is a normal paragraph.\n\n\n\nMost of these elements are styled by browsers with few modifications on our part.\n\nMaui and his rough as guts piece of pounamu, what a stink buzz. Bro, quater-acre patches are really naff good with bung mates, aye. You have no idea how beached as our random kais were aye. Every time I see those beautiful lengths of number 8 wire it’s like Castle Hill all over again aye, do you happen to have a bucket or a hose bro?\n\nH2 Headings\n\nYou have no idea how pretty suss our same same but different toasted sandwiches were aye. Every time I see those carked it keas it’s like the dairy all over again aye, you don’t know his story, bro. Anyway, Hairy Maclary from Donaldson’s Dairy is just Mrs Falani in disguise, to find the true meaning of life, one must start frying up with the hangi, mate. After the rugby ball is jumped the ditch, you add all the stink girl guide biscuits to the trotie you’ve got yourself a meal.\n\nH3 Headings\n\nYou have no idea how pretty suss our same same but different toasted sandwiches were aye. Every time I see those carked it keas it’s like the dairy all over again aye, you don’t know his story, bro. Anyway, Hairy Maclary from Donaldson’s Dairy is just Mrs Falani in disguise, to find the true meaning of life, one must start frying up with the hangi, mate. After the rugby ball is jumped the ditch, you add all the stink girl guide biscuits to the trotie you’ve got yourself a meal.\n\nH4 Headings\n\nYou have no idea how pretty suss our same same but different toasted sandwiches were aye. Every time I see those carked it keas it’s like the dairy all over again aye, you don’t know his story, bro. Anyway, Hairy Maclary from Donaldson’s Dairy is just Mrs Falani in disguise, to find the true meaning of life, one must start frying up with the hangi, mate. After the rugby ball is jumped the ditch, you add all the stink girl guide biscuits to the trotie you’ve got yourself a meal.\n\nH5 Headings\n\nYou have no idea how pretty suss our same same but different toasted sandwiches were aye. Every time I see those carked it keas it’s like the dairy all over again aye, you don’t know his story, bro. Anyway, Hairy Maclary from Donaldson’s Dairy is just Mrs Falani in disguise, to find the true meaning of life, one must start frying up with the hangi, mate. After the rugby ball is jumped the ditch, you add all the stink girl guide biscuits to the trotie you’ve got yourself a meal.\n\nH6 Headings\n\nYou have no idea how pretty suss our same same but different toasted sandwiches were aye. Every time I see those carked it keas it’s like the dairy all over again aye, you don’t know his story, bro. Anyway, Hairy Maclary from Donaldson’s Dairy is just Mrs Falani in disguise, to find the true meaning of life, one must start frying up with the hangi, mate. After the rugby ball is jumped the ditch, you add all the stink girl guide biscuits to the trotie you’ve got yourself a meal.\n\n\n\nHe was alone then; when he sat in that same chair his wife now sits in, and I shared with him the positive result to his HIV test. Though he seemed disinterested, vaguely detached, he had obviously heard of HIV before. His chart from the local clinic indicated a previous history of and treatment for anal gonorrhea, two acute cases of syphilis in the past three years, and a urinary tract infection last month. His only listed sexual contact, his wife. Who, strangely enough, only tested positive for one of the syphilis infections.\n\n“Mistake, this! I am married, not a giver of ass.”\n\nGiver of ass? That’s one for the archive, I think.\n\nUnwilling to engage his obvious denials, I ignore the comment and instead explain that due to a higher than acceptable potential of a false positive result, we won’t consider his oral test as confirmatory until the more accurate blood analysis is in.\n\n“I no understand”, he says to the room in general.\n\nHis annoyance is obvious. Abrasively, he offers me his exposed forearm. This, I assume, is my cue to draw his blood. Ignoring the indignant anger beginning to rise, I tighten my jaw, then swab the fat vein with betadine, working the cool, brown liquid off in concentric circles, using strong medicinal smelling alcohol. I use the betadine, as most of these men work in the mines, and dirt three layers thick on exposed skin is the norm. As the first tube in the vacationer fills with blood, he asks,\n\n“So how I get this thing?”\n\nAh, I see we are going to play the circuitous dance of ignorance. Sounding just a little too clinical, I begin the HIV 101 mantra.\n\n“Well, people acquire HIV through certain types of sex with an infected person, through sharing needles with an infected person, and sometimes through a blood transfusion. Have you ever had a blood transfusion, sir?”\n\nI take the dismissive wave of his hand as a no to the transfusion question. I don’t make a great attempt to navigate a comfort zone here; instinct and experience telling me he has already set the script of what is to follow.\n\n“She is fucking other cocks my whore devil wife”?\nBingo! A narrative that over the next six weeks I will hear from several other men as well.\n\n“These whores, all they want is the cock!”\nCareful Skippy, you really aren’t as convincing as you think you are.\n\n\n  \n    “She is fucking other cocks my whore devil wife”?\n    \n    Bingo! A narrative that over the next six weeks I will hear from several other men as well.\n  \n\n  \n    “These whores, all they want is the cock!”\n    \n    Careful Skippy, you really aren’t as convincing as you think you are.\n  \n\n  \n    from A World Away by alto\n  \n\n\nChinese Paragraph\n\n「名词成灾」的流行病里，灾情最严重的该是所谓「科学至上」（scientism）。在现代的工业社会里，科学早成显贵，科技更是骄子，所以知识分子的口头与笔下，有意无意，总爱用一些「学术化」的抽象名词，好显得客观而精确。有人称之为「伪术语」（pseudo-jargon）。例如：明明是 first step，却要说成 initial phase：明明是 letter，却要说成 communication，都属此类。\n\nJapanese Paragraph\n\n『雪国』の主な舞台は、上越国境の清水トンネルを抜けた湯沢温泉であるが、この作品も『伊豆の踊子』同様に、川端康成の旅の出会いから生まれたもので、雪中の火事も実際に起ったことだと川端は語っている。川端は作品内で故意に地名を隠しているが、1934 年（昭和 9 年）6 月 13 日より 1937 年まで新潟県湯沢町の高半旅館（現：高半ホテル）に逗留していたことを随筆『「雪国」の旅』で述べている。\n\n## H2 Heading\n### H3 Heading\n#### H4 Heading\n##### H5 Heading\n###### H6 Heading\n\n\n\nNewsletters Signup Form\n\n\n  \n\n",
+      "excerpt": "Lorem lean startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor.\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["miscellaneous"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Custom HTML Markups",
+      "permalink": "https://fami2u.github.io/aics/_site/custom-html-markups.html",
+      "link": "https://fami2u.github.io/aics/_site/custom-html-markups.html",
+      "date": "2014-06-01T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": ".note, .store, and .download\n\nA paragraph block with a thin border line.\n\nUsage\n\n&lt;p class=\"download\"&gt;\n  &lt;a href=\"https://github.com/sparanoid/sparanoid.com/\"&gt;Download&lt;/a&gt; it from GitHub\n&lt;/p&gt;\n\n&lt;p class=\"store\"&gt;\n  Love this plugin? please consider &lt;a href=\"{{ site.profile.donate }}\"&gt;buying me a cup of coffee.&lt;/a&gt;\n&lt;/p&gt;\n\n\n\nPlease note that you can’t apply CSS classes in Markdown, so you have to use HTML markup.\n\nExample\n\n\n  Download it from GitHub\n\n\n\n  Love this plugin? please consider buying me a cup of coffee.\n\n\n.largetype\n\nMake normal paragraph text large enough.\n\nUsage\n\n&lt;p class=\"largetype\"&gt;\n  &lt;a href=\"{{ site.profile.donate }}\"&gt;PayPal&lt;/a&gt;\n&lt;/p&gt;\n\n\n\nPlease note that you can’t apply CSS classes in Markdown, so you have to use HTML markup.\n\nExample\n\n\n  PayPal\n\n\n.browser\n\nA simple browser frame using pure CSS.\n\nUsage\n\n&lt;p class=\"browser\"&gt;\n  &lt;img src=\"http://sparanoid.com/photo.jpg\" alt=\"Image\"&gt;\n&lt;/p&gt;\n\n\n\nPlease note that you can’t apply CSS classes in Markdown, so you have to use HTML markup.\n\nExample\n\n\n\nLightense Images\n\nA simple library inspired by Tim Holman to view large images up close using simple mouse interaction, and the full screen.\n\nUsage\n\nAdd the following setting to your post front-matter field:\n\nplugin: lightense\n\n\n\nMarkdown markup:\n\n![Image](http://sparanoid.com/photo.jpg)\n\n\n\nOr simply use HTML:\n\n&lt;p&gt;\n  &lt;img src=\"http://sparanoid.com/photo.jpg\" alt=\"Image\"&gt;\n&lt;/p&gt;\n\n\n\nLightense Images is activated globally by default, if you want to disable this effect for specific image, you can simply apply .no-lightense CSS class to your &lt;img&gt;:\n\n&lt;p&gt;\n  &lt;img src=\"http://sparanoid.com/photo.jpg\" class=\"no-lightense\" alt=\"Image\"&gt;\n&lt;/p&gt;\n\n\n\nPlease note that if you’re using HTML markup, you should wrap your images into a &lt;p&gt; container.\n\nExample\n\n\n",
+      "excerpt": ".note, .store, and .download\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["curtana"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Custom Color Scheme",
+      "permalink": "https://fami2u.github.io/aics/_site/custom-color-scheme.html",
+      "link": "https://fami2u.github.io/aics/_site/custom-color-scheme.html",
+      "date": "2014-05-01T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "This is an example how to change your post color scheme for specific posts. You can simply add the following variables to your post front-matter field:\n\nscheme-text: \"#0029ff\"\nscheme-link: \"#ff00b4\"\nscheme-hover: \"#ff00b4\"\nscheme-code: \"#ad00ff\"\nscheme-bg: \"#00ebff\"\nscheme-hero-text: \"#00ebff\"\nscheme-hero-link: \"#00ebff\"\nscheme-hero-bg: \"#0029ff\"\n\n\n\nYou can also ignore other variables if you only want to change the background:\n\nscheme-bg: \"#00ebff\"\n\n\n",
+      "excerpt": "This is an example how to change your post color scheme for specific posts. You can simply add the following variables to your post front-matter field:\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["curtana"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Unique Post Styling via Custom CSS",
+      "permalink": "https://fami2u.github.io/aics/_site/custom-css.html",
+      "link": "https://fami2u.github.io/aics/_site/custom-css.html",
+      "date": "2014-04-01T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "This is an example how to change your post styling via CSS. You can simply add the css option to your post front-matter field:\n\nscheme-text: \"#000\"\nscheme-link: \"#a73300\"\nscheme-hover: \"#ff4e00\"\nscheme-code: \"#a73300\"\ncss: |\n  body {\n    background-image: linear-gradient(to bottom, #fff500, #ff8f00);\n  }\n\n\n\nPlease note that syntax highligting may look ugly with custom background color.\n",
+      "excerpt": "This is an example how to change your post styling via CSS. You can simply add the css option to your post front-matter field:\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["curtana"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "SVG Post Ttile",
+      "permalink": "https://fami2u.github.io/aics/_site/svg-post-title.html",
+      "link": "https://fami2u.github.io/aics/_site/svg-post-title.html",
+      "date": "2014-02-01T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "This is an example of custom post title using SVG image. You can simply add the following setting to your post front-matter field:\n\nsvg-headline: svg/cool-title.svg\nsvg-headline-width: 400\nsvg-headline-height: 86\n\n\n\nImage defined for svg-headline should be stored at _app/assets/svg/cool-title.svg, you can simply keep these title images under Git control, they will be inlined into the HTML pages using Grunt.js in production builds. The svg-headline-width and svg-headline-height are optional if you have correct dimensions for your images.\n\nThere’s also an option for common raster images, but please note that these files should be stored at where you define site.file.\n\nimg-headline: cool-title.png\nimg-headline-width: 500\n\n\n\n\n  Pro Tips: Keep a &lt;title&gt; tag for your SVG can help Safari generate correct post title for its Reader mode:\n\n\n&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"2175\" height=\"465\" viewBox=\"0 0 2175 465\"&gt;\n&lt;title&gt;Cool Article&lt;/title&gt;\n…\n\n\n",
+      "excerpt": "This is an example of custom post title using SVG image. You can simply add the following setting to your post front-matter field:\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["curtana"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "External Link Post",
+      "permalink": "https://fami2u.github.io/aics/_site/external-link-post.html",
+      "link": "https://fami2u.github.io/aics/_site/external-link-post.html",
+      "date": "2014-02-01T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "This is an example of Tumblr-like external link post. You can simply add the following setting to your post front-matter field:\n\nlink: http://sparanoid.com/\n\n\n",
+      "excerpt": "This is an example of Tumblr-like external link post. You can simply add the following setting to your post front-matter field:\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["curtana"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "GitHub Pages Setup Guide",
+      "permalink": "https://fami2u.github.io/aics/_site/github-pages-setup.html",
+      "link": "https://fami2u.github.io/aics/_site/github-pages-setup.html",
+      "date": "2014-01-01T00:00:00+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "The Problem\n\nUnfortunately this project doesn’t work with GitHub Pages or GitHub Pages for projects. There’re some factors that prevent it from generating pages:\n\n\n  Many features Almace Scaffolding provides like live reloading, Less support, inline SVG, and HTML minification are implemented using Grunt.js, it’s not supported by GitHub Pages.\n  Almace Scaffolding uses the latest pre-release Jekyll, so not all features are supported by GitHub Pages renderers.\n  GItHub Pages build server overwrites the source settings. This prevent it generating pages from current file structure.\n\n\nThe Solution\n\nI know this can be tricky and more verbose than uploading your Jekyll site directly to your repository. However GitHub Pages support static HTML pages, a workaround solution for using Almace Scaffolding on GitHub Pages is treating your Jekyll site as static pages:\n\n\n  Build your site locally (grunt build).\n  Upload Jekyll generated static files to your username.github.io repository.\n\n\nIf you’d like to keep all things under Git control, you can try the following file structure:\n\n├── _amsf/ (Almace Scaffolding source code)\n├── *.html (Jekyll-generated static pages)\n└── README.md (your own readme)\n\n\n\nYou can see this live demo how to make them friends.\n",
+      "excerpt": "The Problem\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["deployment"]
+    }
+    
+  
+
+
+]
