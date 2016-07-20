@@ -1,4 +1,4 @@
 User-agent: *
 
 
-Sitemap: https://fami2u.github.io/aics/_site/lab/amsf/sitemap.xml
+Sitemap: https://fami2u.github.io/aics/_site//sitemap.xml
