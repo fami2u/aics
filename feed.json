@@ -69,12 +69,36 @@
   
     
     {
+      "title": "aics",
+      "permalink": "https://fami2u.github.io/aics/_site/open-source.html",
+      "link": "https://fami2u.github.io/aics/_site/open-source.html",
+      "date": "2016-07-21T00:00:00+08:00",
+      
+        "modified": "2016-07-21T17:54:08+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "简介\n\naics 是一个代码复用管理及meteor项目部署的工具。\n\n网站地址\n\ncodedepot\n\n建议和反馈\n\nhttps://github.com/fami2u/aics/issues\n",
+      "excerpt": "简介\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["resource"]
+    }
+    
+  
+
+  
+    ,
+    {
       "title": "fami2u",
       "permalink": "https://fami2u.github.io/aics/_site/fami2u.html",
       "link": "https://fami2u.github.io/aics/_site/fami2u.html",
       "date": "2016-07-21T00:00:00+08:00",
       
-        "modified": "2016-07-21T17:47:45+08:00",
+        "modified": "2016-07-21T18:22:57+08:00",
       
       "author": {
         "name": "qintengfei",
@@ -98,7 +122,7 @@
       "link": "https://fami2u.github.io/aics/_site/codedepot.html",
       "date": "2016-07-21T00:00:00+08:00",
       
-        "modified": "2016-07-21T17:47:30+08:00",
+        "modified": "2016-07-21T18:22:57+08:00",
       
       "author": {
         "name": "qintengfei",
@@ -110,6 +134,54 @@
       "languages": null,
       "categories": ["note"],
       "tags": ["resource"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "Open Sourced of fami2u",
+      "permalink": "https://fami2u.github.io/aics/_site/aics.html",
+      "link": "https://fami2u.github.io/aics/_site/aics.html",
+      "date": "2016-07-21T00:00:00+08:00",
+      
+        "modified": "2016-07-21T17:49:53+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "简介\n\nfami2u开源的项目。\n\n网站地址\n\ncodedepot\n\n建议和反馈\n\nqintengfei@fami2u.com\n",
+      "excerpt": "简介\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["resource"]
+    }
+    
+  
+
+  
+    ,
+    {
+      "title": "meteorup",
+      "permalink": "https://fami2u.github.io/aics/_site/meteorup.html",
+      "link": "https://fami2u.github.io/aics/_site/meteorup.html",
+      "date": "2016-07-20T00:00:00+08:00",
+      
+        "modified": "2016-07-21T15:54:27+08:00",
+      
+      "author": {
+        "name": "qintengfei",
+        "url": "http://fami2u.com",
+        "email": "qintengfei@fami2u.com"
+      },
+      "content": "项目简介\n\n\n  简单、快速、安全的 Meteor 部署工具\n\n\n项目官方网站\n\n\n  http://meteorup.cn\n\n",
+      "excerpt": "项目简介\n\n",
+      "languages": null,
+      "categories": ["note"],
+      "tags": ["deployment"]
     }
     
   
