@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# set -x 
+set -e
+
+## install make curl
 ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
 
 if [ -f /etc/lsb-release ]; then
@@ -28,30 +32,10 @@ i*86)
     ;;
 esac
 
-
-# Is docker already installed?
-set +e
-haveDocker=$(docker version | grep "version")
-set -e
-
-if [ ! "$haveDocker" ]; then
-
-	## install curl 
-	if [ "$OS" == "CentOS" ]; then
-	    echo "CentOS"
-	    yum -y install curl
-	    # Install docker
-		curl -fsSL https://get.docker.com/ | sh
-		sleep 3
-		service docker start
-
-	elif [ "$OS" == "Ubuntu" ]; then
-	    echo "Ubuntu"
-	    apt-get install curl
-	    # Install docker
-		curl -fsSL https://get.docker.com/ | sh
-	else
-	    echo "Other"
-	fi
-	
+if [ "$OS" == "CentOS" ]; then
+    echo "CentOS"
+    yum -y install gcc-c++ make net-tools curl
+elif [ "$OS" == "Ubuntu" ]; then
+    echo "Ubuntu"
+    apt-get -y install curl make g++  
 fi
