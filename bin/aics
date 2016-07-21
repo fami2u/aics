@@ -261,17 +261,17 @@ commander
     console.log();
   });
 
-commander
-  .command('remove [packagename]')
-  .description('删除项目中已经添加的代码包')
-  .action(function(env, options) {
-    Account.adduser();
-  }).on('--help', function() {
-    console.log('  说明:');
-    console.log();
-    console.log('    在 *.fami2u.com 注册过的账号可直接登录');
-    console.log();
-  });
+// commander
+//   .command('remove [packagename]')
+//   .description('删除项目中已经添加的代码包')
+//   .action(function(env, options) {
+//     Account.adduser();
+//   }).on('--help', function() {
+//     console.log('  说明:');
+//     console.log();
+//     console.log('    在 *.fami2u.com 注册过的账号可直接登录');
+//     console.log();
+//   });
 
 commander
   .command('addfile')
