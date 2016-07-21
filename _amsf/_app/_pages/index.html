@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Almace Scaffolding
+title: 文档 | 首页
 permalink: /
 ---
 
@@ -20,18 +20,13 @@ permalink: /
   </header>
 
   <div class="page-content">
-    <h2>简介</h2>
-    {% for post in site.tags.getting-started %}
-      {% include themes/{{ site.theme }}/includes/page-item.html %}
-    {% endfor %}
-
     <h2>aics 命令</h2>
     {% for post in site.tags.commanders %}
       {% include themes/{{ site.theme }}/includes/page-item.html %}
     {% endfor %}
 
     <h2>开发者资源</h2>
-    {% for post in site.tags.curtana %}
+    {% for post in site.tags.resource %}
       {% include themes/{{ site.theme }}/includes/page-item.html %}
     {% endfor %}
 
@@ -40,13 +35,12 @@ permalink: /
       {% include themes/{{ site.theme }}/includes/page-item.html %}
     {% endfor %}
 
-    <h2>RESTful API (开发中)</h2>
-    {% for post in site.tags.miscellaneous %}
-      {% include themes/{{ site.theme }}/includes/page-item.html %}
-    {% endfor %}
-    <h2>变更日志</h2>
-    {% for post in site.tags.miscellaneous %}
-      {% include themes/{{ site.theme }}/includes/page-item.html %}
-    {% endfor %}
+    <h2>RESTful API</h2>
+    <p>赋予开发者更大的能力。 项目暂时(开发中) 敬请期待</p>
+
+    <h2>贡献者</h2>
+    <p>sunhannan</p>
+    <p>romejiang</p>
+    <p>devqin</p>
   </div>
 </article>

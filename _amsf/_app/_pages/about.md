@@ -5,15 +5,4 @@ permalink: /about/
 desc: 关于我们
 ---
 
-This is an example About page.
-
-Sparanoid is a one-man design studio operated by Tunghsiao Liu, currently located in China. You can ping me on [Twitter](http://twitter.com/tunghsiao) or send correspondence to [t@sparanoid.com](mailto:t@sparanoid.com).
-
-## Colophon
-
-[<abbr title="Almace Scaffolding">AMSF</abbr>](http://sparanoid.com/lab/amsf/) ([Source](http://github.com/sparanoid/sparanoid.com)) -
-[GitHub](http://github.com/) -
-[CloudFront](http://aws.amazon.com/cloudfront/) -
-[Textmate](http://macromates.com/)
-
-All posts are &copy; Tunghsiao Liu, all rights reserved. The views expressed on this site are mine alone and not those of my employers and clients, past and present.
+FAMI是一个高端技术类自由职业者组织，推进企业IT无边界化，根据数量庞大的项目实际经验不断完善，以技术能力强、经验丰富的开发者为主导的研发能力组织形式，并提供协作双方共同遵守的准则、流程管理、辅助工具。降低企业开展设计、研发工作时的成本，同时为有能力的开发者提供更好回报的能力变现机会。
