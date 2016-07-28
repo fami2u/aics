@@ -4,7 +4,7 @@
   },
   "name": "aics",
   "version": "0.1.0",
-  "description": "Aics is a meteor enhancement tools",
+  "description": "Aics is a code manager & meteor app deploy tools",
   "main": "index.js",
   "scripts": {
     "test": "nyc ava"
@@ -14,16 +14,17 @@
     "name": "qintengfei"
   },
   "contributors": [
-  {
+    {
       "email": "sunhannan@fami2u.com",
       "name": "sunhannan",
       "url": "https://github.com/sunhannan"
+    },
+    {
+      "email": "romejiang@gmail.com",
+      "name": "Jinag Tao",
+      "url": "https://github.com/romejiang"
     }
-    ,{
-    "email": "romejiang@gmail.com",
-    "name": "Jinag Tao",
-    "url": "https://github.com/romejiang"
-  }],
+  ],
   "keywords": [
     "meteor",
     "deploy",
@@ -51,6 +52,7 @@
     "config-chain": "^1.1.10",
     "debug": "2.x.x",
     "executive": "^1.1.5",
+    "fs-extra": "^0.30.0",
     "inquirer": "^1.1.2",
     "md5": "^2.1.0",
     "minimist": "^1.2.0",
@@ -62,6 +64,7 @@
     "rimraf": "2.5.x",
     "underscore": "1.x.x",
     "unzip": "0.1.11",
+    "update-notifier": "^1.0.2",
     "uuid": "2.x.x",
     "walk": "^2.3.9",
     "walk-promise": "^0.2.0",
