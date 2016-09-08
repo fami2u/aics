@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var fs        = require('fs');
-var async     = require('async');
-var path      = require('path');
-var controller   = require('../lib/controller');
+var fs = require('fs');
+var async = require('async');
+var path = require('path');
+var controller = require('../lib/controller');
 var ProjectManager = require('../lib/aics/project');
 var PackageManager = require('../lib/aics/package');
 var Account = require('../lib/aics/account');
@@ -11,275 +11,253 @@ var commander = require('commander');
 if (!process.env.AICS_HOST) {
   process.env.AICS_HOST = 'http://storage.fami2u.com';
 }
+process.env.AICS_HOST = 'http://localhost:8080';
 
 var pkg = require('../package.json');
 
-  commander.version(pkg.version)
-.description(pkg.description)
+commander.version(pkg.version)
+  .description(pkg.description)
   .option('-v, --version', 'aics version')
   .usage('deplay project-name');
 
-  commander.on('--help', function() {
-      console.log('  Basic Examples:');
-      console.log('');
-      console.log('  Faster install meteor:');
-      console.log('');
-      console.log('    $ aics install');
-      console.log('');
-      console.log('  Deployment project:');
-      console.log('');
-      console.log('    $ aics deploy appName');
-      console.log('');
-      console.log('  Command help:');
-      console.log('');
-      console.log('    $ aics deploy -h');
-      console.log('');
-      });
+commander.on('--help', function() {
+  console.log('  Basic Examples:');
+  console.log('');
+  console.log('  Faster install meteor:');
+  console.log('');
+  console.log('    $ aics install');
+  console.log('');
+  console.log('  Deployment project:');
+  console.log('');
+  console.log('    $ aics deploy appName');
+  console.log('');
+  console.log('  Command help:');
+  console.log('');
+  console.log('    $ aics deploy -h');
+  console.log('');
+});
 
 // 部署到aics
 commander.command('deploy <project-name> <private-key>')
-.option('-m, --mobile-settings <mobile-settings.json>', 'Set mobile-settings from json file')
-.option('-s, --server-only', 'server only')
-.option('-e, --env <env.json>', 'Set environment variables from json file')
-.option('-d, --debug', 'debug mode')
-.description('Deployment this project to aics.cn microhost')
-.action(function(argument , privateKey ,options) {
+  .option('-m, --mobile-settings <mobile-settings.json>', 'Set mobile-settings from json file')
+  .option('-s, --server-only', 'server only')
+  .option('-e, --env <env.json>', 'Set environment variables from json file')
+  .option('-d, --debug', 'debug mode')
+  .description('Deployment this project to aics.cn microhost')
+  .action(function(argument, privateKey, options) {
 
     var pwd = path.resolve('.');
-
-    // console.log("argument"); //project-name
-    // console.log(argument); // project-name
-    // console.log("pwd"); //项目地址
-    // console.log(pwd); //项目地址
-    // console.log("commander");// 整个Comm
-    // console.log(commander); //整个Comm
-    // console.log("options"); //选项
-    // console.log(privateKey); //选项
-    // console.log(options); //选项
-
-    // for( var opt in options){
-    //   console.log("============");
-    //   console.log(opt);
-    //   console.log("=");
-    //   console.log(options[opt]);
-    // }
-
-    var actionsRegistry = new controller( pwd ,options);
-    if(actionsRegistry['deploy']) {
-      actionsRegistry['deploy'](argument , privateKey);
+    var actionsRegistry = new controller(pwd, options);
+    if (actionsRegistry['deploy']) {
+      actionsRegistry['deploy'](argument, privateKey);
     }
 
-}).on('--help', function() {
-  console.log('  Examples:');
-  console.log();
-  console.log('    $ aics deploy appName  # Deployment to http://appName.aics.cn ');
-  console.log();
-  console.log('    $ aics deploy appName --env env.json');
-  console.log();
-  }
-  );
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics deploy appName  # Deployment to http://appName.aics.cn ');
+    console.log();
+    console.log('    $ aics deploy appName --env env.json');
+    console.log();
+  });
 
 // 配置服务器运行环境
 commander.command('setup')
-.description('Configuration runtime environments on private server')
-.action(function(options) {
+  .description('Configuration runtime environments on private server')
+  .action(function(options) {
 
     var pwd = path.resolve('.');
 
-    var actionsRegistry = new controller( pwd ,options);
-    if(actionsRegistry['setup']) {
-    actionsRegistry['setup']();
+    var actionsRegistry = new controller(pwd, options);
+    if (actionsRegistry['setup']) {
+      actionsRegistry['setup']();
     }
 
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('    $ aics setup #  configuration your server');
-      console.log();
-      }
-      );
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics setup #  configuration your server');
+    console.log();
+  });
 
 
-    // 部署到私有的服务器上
-    commander.command('push')
-    .option('-m, --mobile-settings <mobile-settings.json>', 'Set mobile-settings from json file')
-    .option('-s, --server-only', 'server only')
-    .option('-d, --debug', 'debug mode')
-    .option('-b, --verbose', 'verbose mode')
-    .description('Deployment a project to private server')
-    .action(function(options) {
+// 部署到私有的服务器上
+commander.command('push')
+  .option('-m, --mobile-settings <mobile-settings.json>', 'Set mobile-settings from json file')
+  .option('-s, --server-only', 'server only')
+  .option('-d, --debug', 'debug mode')
+  .option('-b, --verbose', 'verbose mode')
+  .description('Deployment a project to private server')
+  .action(function(options) {
 
-        var pwd = path.resolve('.');
-        // console.log(options);
+    var pwd = path.resolve('.');
+    // console.log(options);
 
-        var actionsRegistry = new controller( pwd ,options);
-        if(actionsRegistry['push']) {
-        actionsRegistry['push']();
-        }
+    var actionsRegistry = new controller(pwd, options);
+    if (actionsRegistry['push']) {
+      actionsRegistry['push']();
+    }
 
-        }).on('--help', function() {
-          console.log('  Examples:');
-          console.log();
-          console.log('    $ aics push  # config package.js ');
-          console.log();
-          console.log('    $ aics push');
-          console.log();
-          }
-          );
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics push  # config package.js ');
+    console.log();
+    console.log('    $ aics push');
+    console.log();
+  });
 
-        // logs
-        commander.command('logs')
-        .option('-l, --lines <lines>', 'output the last N lines, instead of the last 50 by default')
-        .description('Print logs on server')
-        .action(function(options) {
+// logs
+commander.command('logs')
+  .option('-l, --lines <lines>', 'output the last N lines, instead of the last 50 by default')
+  .description('Print logs on server')
+  .action(function(options) {
 
-            var pwd = path.resolve('.');
-            // console.log(options);
+    var pwd = path.resolve('.');
+    // console.log(options);
 
-            var actionsRegistry = new controller( pwd ,options);
-            if(actionsRegistry['logs']) {
-            actionsRegistry['logs']();
-            }
+    var actionsRegistry = new controller(pwd, options);
+    if (actionsRegistry['logs']) {
+      actionsRegistry['logs']();
+    }
 
-            }).on('--help', function() {
-              console.log('  Examples:');
-              console.log();
-              console.log('    $ aics logs  ');
-              console.log();
-              console.log('    $ aics logs -t 100');
-              console.log();
-              }
-              );
-            // logs
-            commander.command('mongo')
-            .description('Connection to a remote mongo database')
-            .action(function(options) {
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics logs  ');
+    console.log();
+    console.log('    $ aics logs -t 100');
+    console.log();
+  });
+// logs
+commander.command('mongo')
+  .description('Connection to a remote mongo database')
+  .action(function(options) {
 
-                var pwd = path.resolve('.');
-                // console.log(options);
+    var pwd = path.resolve('.');
+    // console.log(options);
 
-                var actionsRegistry = new controller( pwd ,options);
-                if(actionsRegistry['mongo']) {
-                actionsRegistry['mongo']();
-                }
+    var actionsRegistry = new controller(pwd, options);
+    if (actionsRegistry['mongo']) {
+      actionsRegistry['mongo']();
+    }
 
-                }).on('--help', function() {
-                  console.log('  Examples:');
-                  console.log();
-                  console.log('    $ aics mongo');
-                  console.log();
-                  }
-                  );
-                //add user
-                commander
-                .command('adduser')
-                .description('登录aics cli')
-                .action(function(env, options) {
-                    Account.adduser();
-                    }).on('--help', function() {
-                      console.log('  Examples:');
-                      console.log();
-                      console.log('    $ aics adduser # 登录aics cli');
-                      console.log();
-                      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics mongo');
+    console.log();
+  });
+//add user
 commander
-.command('register')
-.description('create user account')
-.action(function(env,options){
+  .command('adduser')
+  .description('登录aics cli')
+  .action(function(env, options) {
+    Account.adduser();
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics adduser # 登录aics cli');
+    console.log();
+  });
+commander
+  .command('register')
+  .description('create user account')
+  .action(function(env, options) {
     Account.createUser();
-    })
-.on('--help',function(){
+  })
+  .on('--help', function() {
     console.log("Examples:")
     console.log();
     console.log("   $ aics createuser #create user account")
     console.log()
-    })
+  })
 
 
 
 //log logind user info
 commander
-.command('whoami')
-.description('显示 aics 登录用户信息')
-.action(function(env, options) {
+  .command('whoami')
+  .description('显示 aics 登录用户信息')
+  .action(function(env, options) {
     var user = Account.get();
     console.log(user.username);
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('    $ aics whoami # 显示当前登录用户信息');
-      console.log();
-      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics whoami # 显示当前登录用户信息');
+    console.log();
+  });
 
 // generate aics codedepot conf or aics project conf
 
 commander
-.command('init')
-.description('生成aics配置文件')
-.option('-p, --project <name>', 'generate aics project conf')
-.option('-e, --example <name>', 'generate project from example project conf')
-.action(function(options) {
+  .command('init')
+  .description('生成aics配置文件')
+  .option('-p, --project <name>', 'generate aics project conf')
+  .option('-e, --example <name>', 'generate project from example project conf')
+  .action(function(options) {
     if (options.project) {
-    ProjectManager.initProject(process.argv);
-    return;
+      ProjectManager.initProject(process.argv);
+      return;
     }
     if (options.example) {
-    ProjectManager.initWithSample(options.example);
-    return;
+      ProjectManager.initWithSample(options.example);
+      return;
     }
     PackageManager.init(process.argv);
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('    $ aics init -p [name] # 生成一个 名为 name 的 project 项目 ');
-      console.log('    $ aics init -e [name] # 根据 name 生成一个项目');
-      console.log('    $ aics init [name] # 生成一个 名为 name 代码包项目 ');
-      console.log();
-      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics init -p [name] # 生成一个 名为 name 的 project 项目 ');
+    console.log('    $ aics init -e [name] # 根据 name 生成一个项目');
+    console.log('    $ aics init [name] # 生成一个 名为 name 代码包项目 ');
+    console.log();
+  });
 
 commander
-.command('add [name]')
-.description('添加 aics 代码包 代码包地址: http://code.fami2u.com/')
-.action(function(env, options) {
+  .command('add [name]')
+  .description('添加 aics 代码包 代码包地址: http://code.fami2u.com/')
+  .action(function(env, options) {
     Account.adduser();
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('    # aics add fami:readme # 添加代码包到project');
-      console.log();
-      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    # aics add fami:readme # 添加代码包到project');
+    console.log();
+  });
 
 commander
-.command('update')
-.option('--a,--all <path>', 'update all packages in .aics/packages.json')
-.description('更新项目依赖')
-.action(function(env, options) {
+  .command('update')
+  .option('--a,--all <path>', 'update all packages in .aics/packages.json')
+  .description('更新项目依赖')
+  .action(function(env, options) {
     ProjectManager.update(env);
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('    $ aics update -a # 更新项目依赖的代码包的版本');
-      console.log('    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包的版本');
-      console.log();
-      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics update -a # 更新项目依赖的代码包的版本');
+    console.log('    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包的版本');
+    console.log();
+  });
 
 commander
-.command('publish')
-.option('-p, --project <name>', '发布解决方案（项目）')
-.description('发布aics项目或组件')
-.action(function(options) {
+  .command('publish')
+  .option('-p, --project <name>', '发布解决方案（项目）')
+  .description('发布aics项目或组件')
+  .action(function(options) {
     if (options.project) {
-    ProjectManager.publish();
-    return;
+      ProjectManager.publish();
+      return;
     }
     PackageManager.publish();
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('    $ aics publish -p [name] # 发布名为 [name] 的 aics 项目');
-      console.log('    $ aics publish [name] # 发布名为 [name] 的 aics 代码包');
-      console.log();
-      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics publish -p [name] # 发布名为 [name] 的 aics 项目');
+    console.log('    $ aics publish [name] # 发布名为 [name] 的 aics 代码包');
+    console.log();
+  });
 
 // commander
 //   .command('remove [packagename]')
@@ -294,31 +272,31 @@ commander
 //   });
 
 commander
-.command('addfile')
-.option('-f, --file <path>', '添加文件到组件')
-.option('-t, --target <name>', '添加到的组件名称')
-.description('添加文件到组件')
-.action(function(options) {
+  .command('addfile')
+  .option('-f, --file <path>', '添加文件到组件')
+  .option('-t, --target <name>', '添加到的组件名称')
+  .description('添加文件到组件')
+  .action(function(options) {
     PackageManager.addfile(options.target, options.file);
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
-      console.log();
-      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
+    console.log();
+  });
 
 commander
-.command('lsfile')
-.option('-t, --target <name>', '组件名称')
-.description('显示代码包中的文件')
-.action(function(options) {
+  .command('lsfile')
+  .option('-t, --target <name>', '组件名称')
+  .description('显示代码包中的文件')
+  .action(function(options) {
     PackageManager.files(options.target);
-    }).on('--help', function() {
-      console.log('  Examples:');
-      console.log();
-      console.log('    aics lsfile -t depot # 显示 depot 代码包中的文件');
-      console.log();
-      });
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    aics lsfile -t depot # 显示 depot 代码包中的文件');
+    console.log();
+  });
 
 
 
