@@ -14,6 +14,9 @@ if (!process.env.AICS_HOST) {
 process.env.AICS_HOST = 'http://localhost:8080';
 
 var pkg = require('../package.json');
+const updateNotifier = require('update-notifier');
+
+updateNotifier({pkg}).notify();
 
 commander.version(pkg.version)
   .description(pkg.description)
@@ -219,7 +222,7 @@ commander
   .command('add [name]')
   .description('添加 aics 代码包 代码包地址: http://code.fami2u.com/')
   .action(function(env, options) {
-    Account.adduser();
+    ProjectManager.add(env)
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
