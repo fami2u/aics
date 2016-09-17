@@ -8,37 +8,33 @@ var ProjectManager = require('../lib/aics/project');
 var PackageManager = require('../lib/aics/package');
 var Account = require('../lib/aics/account');
 var commander = require('commander');
+var argv = require('minimist')(process.argv.slice(2));
 if (!process.env.AICS_HOST) {
   process.env.AICS_HOST = 'http://storage.fami2u.com';
 }
-process.env.AICS_HOST = 'http://localhost:8080';
-
 var pkg = require('../package.json');
-const updateNotifier = require('update-notifier');
-
-updateNotifier({pkg}).notify();
 
 commander.version(pkg.version)
   .description(pkg.description)
-  .option('-v, --version', 'aics version')
-  .usage('deplay project-name');
 
-commander.on('--help', function() {
-  console.log('  Basic Examples:');
-  console.log('');
-  console.log('  Faster install meteor:');
-  console.log('');
-  console.log('    $ aics install');
-  console.log('');
-  console.log('  Deployment project:');
-  console.log('');
-  console.log('    $ aics deploy appName');
-  console.log('');
-  console.log('  Command help:');
-  console.log('');
-  console.log('    $ aics deploy -h');
-  console.log('');
-});
+
+const updateNotifier = require('update-notifier');
+updateNotifier({pkg}).notify();
+
+
+// commander.on('--help', function() {
+//   console.log('  Basic Examples:');
+//   console.log('');
+//   console.log('');
+//   console.log('  Deployment project:');
+//   console.log('');
+//   console.log('    $ aics deploy appName');
+//   console.log('');
+//   console.log('  Command help:');
+//   console.log('');
+//   console.log('    $ aics deploy -h');
+//   console.log('');
+// });
 
 // 部署到aics
 commander.command('deploy <project-name> <private-key>')
@@ -46,7 +42,7 @@ commander.command('deploy <project-name> <private-key>')
   .option('-s, --server-only', 'server only')
   .option('-e, --env <env.json>', 'Set environment variables from json file')
   .option('-d, --debug', 'debug mode')
-  .description('Deployment this project to aics.cn microhost')
+  .description('部署当前项目到 *.fami2x.com')
   .action(function(argument, privateKey, options) {
 
     var pwd = path.resolve('.');
@@ -66,7 +62,7 @@ commander.command('deploy <project-name> <private-key>')
 
 // 配置服务器运行环境
 commander.command('setup')
-  .description('Configuration runtime environments on private server')
+  .description('配置私有服务器运行环境（参见：http://aics.fami2u.com/#setup）')
   .action(function(options) {
 
     var pwd = path.resolve('.');
@@ -90,7 +86,7 @@ commander.command('push')
   .option('-s, --server-only', 'server only')
   .option('-d, --debug', 'debug mode')
   .option('-b, --verbose', 'verbose mode')
-  .description('Deployment a project to private server')
+  .description('部署当前项目到私有服务器')
   .action(function(options) {
 
     var pwd = path.resolve('.');
@@ -113,7 +109,7 @@ commander.command('push')
 // logs
 commander.command('logs')
   .option('-l, --lines <lines>', 'output the last N lines, instead of the last 50 by default')
-  .description('Print logs on server')
+  .description('打印服务器日志')
   .action(function(options) {
 
     var pwd = path.resolve('.');
@@ -123,7 +119,6 @@ commander.command('logs')
     if (actionsRegistry['logs']) {
       actionsRegistry['logs']();
     }
-
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
@@ -134,7 +129,7 @@ commander.command('logs')
   });
 // logs
 commander.command('mongo')
-  .description('Connection to a remote mongo database')
+  .description('连接远程mongodb数据库')
   .action(function(options) {
 
     var pwd = path.resolve('.');
@@ -165,7 +160,7 @@ commander
   });
 commander
   .command('register')
-  .description('create user account')
+  .description('创建aics账户')
   .action(function(env, options) {
     Account.createUser();
   })
@@ -180,8 +175,8 @@ commander
 
 //log logind user info
 commander
-  .command('whoami')
-  .description('显示 aics 登录用户信息')
+  .command('info')
+  .description('显示 aics cli 登录用户信息')
   .action(function(env, options) {
     var user = Account.get();
     console.log(user.username);
@@ -220,7 +215,7 @@ commander
 
 commander
   .command('add [name]')
-  .description('添加 aics 代码包 代码包地址: http://code.fami2u.com/')
+  .description('添加 aics 代码包 代码包地址: http://codedepot.fami2u.com/')
   .action(function(env, options) {
     ProjectManager.add(env)
   }).on('--help', function() {
@@ -232,14 +227,18 @@ commander
 
 commander
   .command('update')
-  .option('--a,--all <path>', 'update all packages in .aics/packages.json')
   .description('更新项目依赖')
-  .action(function(env, options) {
-    ProjectManager.update(env);
+  .action(function() {
+    console.log(argv._)
+    if(argv._.length>1){
+      ProjectManager.update(argv._.pop());
+    }else{
+      ProjectManager.updateAll();      
+    }
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
-    console.log('    $ aics update -a # 更新项目依赖的代码包的版本');
+    console.log('    $ aics update # 更新项目依赖的代码包的版本');
     console.log('    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包的版本');
     console.log();
   });
@@ -287,72 +286,6 @@ commander
     console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
     console.log();
   });
-
-commander
-  .command('lsfile')
-  .option('-t, --target <name>', '组件名称')
-  .description('显示代码包中的文件')
-  .action(function(options) {
-    PackageManager.files(options.target);
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    aics lsfile -t depot # 显示 depot 代码包中的文件');
-    console.log();
-  });
-
-
-
-// 安装meteor
-// commander.command('install')
-//   .option('--verbose', 'verbose mode')
-//   .description('Faster install meteor from aics mirror server')
-//   .action(function(cmd , options) {
-
-//     var pwd = path.resolve('.');
-//     console.log("come soon.");
-
-//   }).on('--help', function() {
-//     console.log('  Examples:');
-//     console.log();
-//     console.log('    $ aics install  # Install meteor ');
-//     console.log();
-//   }
-// );
-
-// // 添加包
-// commander.command('add <package>')
-//   .description('Add a package to this project.')
-//   .action(function(cmd , options) {
-
-//     var pwd = path.resolve('.');
-//     // console.log(options);
-//     console.log("come soon.");
-
-//   }).on('--help', function() {
-//     console.log('  Examples:');
-//     console.log();
-//     console.log('    $ aics add romejiang:wechat-pay');
-//     console.log();
-//   }
-// );
-
-// // 添加包
-// commander.command('remove <package>')
-//   .description('Remove a package from this project.')
-//   .action(function(cmd , options) {
-
-//     var pwd = path.resolve('.');
-//     // console.log(options);
-//     console.log("come soon.");
-
-//   }).on('--help', function() {
-//     console.log('  Examples:');
-//     console.log();
-//     console.log('    $ aics remove romejiang:wechat-pay');
-//     console.log();
-//   }
-// );
 
 
 
