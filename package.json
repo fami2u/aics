@@ -3,7 +3,7 @@
     "aics": "./bin/aics"
   },
   "name": "aics",
-  "version": "0.1.9",
+  "version": "0.1.13",
   "description": "Aics is a code manager & meteor app deploy tools",
   "main": "index.js",
   "scripts": {
@@ -55,7 +55,6 @@
     "mkdirp": "^0.5.1",
     "nodemiral": "1.x.x",
     "progress": "^1.1.8",
-    "qs": "^6.0.2",
     "read": "^1.0.7",
     "request": "2.67.0",
     "request-promise": "^4.1.1",
