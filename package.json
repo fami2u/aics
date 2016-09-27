@@ -3,7 +3,7 @@
     "aics": "./bin/aics"
   },
   "name": "aics",
-  "version": "0.1.13",
+  "version": "0.1.16",
   "description": "Aics is a code manager & meteor app deploy tools",
   "main": "index.js",
   "scripts": {
@@ -39,6 +39,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "aliyun-oss-upload-stream": "^1.2.4",
     "archiver": "0.21.x",
     "async": "^1.5.0",
     "bluebird": "^3.4.6",
@@ -49,7 +50,6 @@
     "debug": "2.x.x",
     "executive": "^1.1.5",
     "fs-extra": "^0.30.0",
-    "inquirer": "^1.1.2",
     "md5": "^2.1.0",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
@@ -60,7 +60,7 @@
     "request-promise": "^4.1.1",
     "rimraf": "2.5.x",
     "underscore": "1.x.x",
-    "unzip": "0.1.11",
+    "unzip2": "^0.2.5",
     "uuid": "2.x.x",
     "walk": "^2.3.9",
     "walk-promise": "^0.2.0",

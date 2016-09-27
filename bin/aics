@@ -14,9 +14,7 @@ if (!process.env.AICS_HOST) {
 }
 // process.env.AICS_HOST = 'http://localhost:8080';
 var pkg = require('../package.json');
-
 process.title = 'aics';
-
 commander.version(pkg.version)
   .description(pkg.description)
 
