@@ -61,23 +61,11 @@ commander
 commander
   .command('init')
   .description('生成aics配置文件')
-  .option('-p, --project <name>', 'generate aics project conf')
-  .option('-e, --example <name>', 'generate project from example project conf')
   .action(function(options) {
-    if (options.project) {
-      ProjectManager.initProject(process.argv);
-      return;
-    }
-    if (options.example) {
-      ProjectManager.initWithSample(options.example);
-      return;
-    }
     PackageManager.init(process.argv);
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
-    console.log('    $ aics init -p [name] # 生成一个 名为 name 的 project 项目 ');
-    console.log('    $ aics init -e [name] # 根据 name 生成一个项目');
     console.log('    $ aics init [name] # 生成一个 名为 name 代码包项目 ');
     console.log();
   });
@@ -86,7 +74,7 @@ commander
   .command('add [name]')
   .description('添加 aics 代码包 代码包地址: http://codedepot.fami2u.com/')
   .action(function(env, options) {
-    ProjectManager.add(env)
+    PackageManager.add(env)
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
@@ -99,11 +87,7 @@ commander
   .description('更新项目依赖')
   .action(function() {
     console.log(argv._)
-    if(argv._.length>1){
-      ProjectManager.update(argv._.pop());
-    }else{
-      ProjectManager.updateAll();      
-    }
+    PackageManager.updatePackage()
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
@@ -114,33 +98,15 @@ commander
 
 commander
   .command('publish')
-  .option('-p, --project <name>', '发布解决方案（项目）')
-  .description('发布aics项目或组件')
+  .description('发布 aics 组件')
   .action(function(options) {
-    if (options.project) {
-      ProjectManager.publish();
-      return;
-    }
     PackageManager.publish();
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
-    console.log('    $ aics publish -p [name] # 发布名为 [name] 的 aics 项目');
     console.log('    $ aics publish [name] # 发布名为 [name] 的 aics 代码包');
     console.log();
   });
-
-// commander
-//   .command('remove [packagename]')
-//   .description('删除项目中已经添加的代码包')
-//   .action(function(env, options) {
-//     Account.adduser();
-//   }).on('--help', function() {
-//     console.log('  说明:');
-//     console.log();
-//     console.log('    在 *.fami2u.com 注册过的账号可直接登录');
-//     console.log();
-//   });
 
 commander
   .command('addfile')
