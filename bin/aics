@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var async = require('async');
-var path = require('path');
-var controller = require('../lib/controller');
 var ProjectManager = require('../lib/aics/project');
 var PackageManager = require('../lib/aics/package');
 var Account = require('../lib/aics/account');
@@ -12,141 +8,12 @@ var argv = require('minimist')(process.argv.slice(2));
 if (!process.env.AICS_HOST) {
   process.env.AICS_HOST = 'http://storage.fami2u.com';
 }
-// process.env.AICS_HOST = 'http://localhost:8080';
+process.env.AICS_HOST = 'http://localhost:8080';
 var pkg = require('../package.json');
 process.title = 'aics';
 commander.version(pkg.version)
   .description(pkg.description)
 
-
-// const updateNotifier = require('update-notifier');
-// updateNotifier({pkg}).notify();
-
-
-// commander.on('--help', function() {
-//   console.log('  Basic Examples:');
-//   console.log('');
-//   console.log('');
-//   console.log('  Deployment project:');
-//   console.log('');
-//   console.log('    $ aics deploy appName');
-//   console.log('');
-//   console.log('  Command help:');
-//   console.log('');
-//   console.log('    $ aics deploy -h');
-//   console.log('');
-// });
-
-// 部署到aics
-commander.command('deploy <project-name> <private-key>')
-  .option('-m, --mobile-settings <mobile-settings.json>', 'Set mobile-settings from json file')
-  .option('-s, --server-only', 'server only')
-  .option('-e, --env <env.json>', 'Set environment variables from json file')
-  .option('-d, --debug', 'debug mode')
-  .description('部署当前项目到 *.fami2x.com')
-  .action(function(argument, privateKey, options) {
-
-    var pwd = path.resolve('.');
-    var actionsRegistry = new controller(pwd, options);
-    if (actionsRegistry['deploy']) {
-      actionsRegistry['deploy'](argument, privateKey);
-    }
-
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    $ aics deploy appName  # Deployment to http://appName.aics.cn ');
-    console.log();
-    console.log('    $ aics deploy appName --env env.json');
-    console.log();
-  });
-
-// 配置服务器运行环境
-commander.command('setup')
-  .description('配置私有服务器运行环境（参见：http://aics.fami2u.com/#setup）')
-  .action(function(options) {
-
-    var pwd = path.resolve('.');
-
-    var actionsRegistry = new controller(pwd, options);
-    if (actionsRegistry['setup']) {
-      actionsRegistry['setup']();
-    }
-
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    $ aics setup #  configuration your server');
-    console.log();
-  });
-
-
-// 部署到私有的服务器上
-commander.command('push')
-  .option('-m, --mobile-settings <mobile-settings.json>', 'Set mobile-settings from json file')
-  .option('-s, --server-only', 'server only')
-  .option('-d, --debug', 'debug mode')
-  .option('-b, --verbose', 'verbose mode')
-  .description('部署当前项目到私有服务器')
-  .action(function(options) {
-
-    var pwd = path.resolve('.');
-    // console.log(options);
-
-    var actionsRegistry = new controller(pwd, options);
-    if (actionsRegistry['push']) {
-      actionsRegistry['push']();
-    }
-
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    $ aics push  # config package.js ');
-    console.log();
-    console.log('    $ aics push');
-    console.log();
-  });
-
-// logs
-commander.command('logs')
-  .option('-l, --lines <lines>', 'output the last N lines, instead of the last 50 by default')
-  .description('打印服务器日志')
-  .action(function(options) {
-
-    var pwd = path.resolve('.');
-    // console.log(options);
-
-    var actionsRegistry = new controller(pwd, options);
-    if (actionsRegistry['logs']) {
-      actionsRegistry['logs']();
-    }
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    $ aics logs  ');
-    console.log();
-    console.log('    $ aics logs -t 100');
-    console.log();
-  });
-// logs
-commander.command('mongo')
-  .description('连接远程mongodb数据库')
-  .action(function(options) {
-
-    var pwd = path.resolve('.');
-    // console.log(options);
-
-    var actionsRegistry = new controller(pwd, options);
-    if (actionsRegistry['mongo']) {
-      actionsRegistry['mongo']();
-    }
-
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    $ aics mongo');
-    console.log();
-  });
 //add user
 commander
   .command('adduser')
@@ -159,6 +26,7 @@ commander
     console.log('    $ aics adduser # 登录aics cli');
     console.log();
   });
+
 commander
   .command('register')
   .description('创建aics账户')
