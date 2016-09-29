@@ -1,7 +1,7 @@
   
 ##aics
 
-A meteor code manager command line tool.
+A meteor code manager command line tool.[![Build Status](https://travis-ci.org/fami2u/aics.svg?branch=master)](https://travis-ci.org/fami2u/aics)
 
 ## 命令
 
