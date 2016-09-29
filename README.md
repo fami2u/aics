@@ -4,7 +4,7 @@
 A meteor code manager command line tool.
 
 [![Build Status](https://travis-ci.org/fami2u/aics.svg?branch=master)](https://travis-ci.org/fami2u/aics)
-[![Coverage Status](https://coveralls.io/repos/github/fami2u/aics/badge.svg?branch=master)](https://coveralls.io/github/fami2u/aics?branch=master)
+[![codecov](https://codecov.io/gh/fami2u/aics/branch/master/graph/badge.svg)](https://codecov.io/gh/fami2u/aics)
 
 
 ## 命令
