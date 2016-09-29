@@ -48,9 +48,10 @@
     "bluebird": "^3.4.6",
     "chalk": "^1.1.1",
     "cjson": "^0.4.0",
-    "colors": "1.1.x",
+    "colors": "^1.1.2",
     "commander": "^2.9.0",
     "debug": "2.x.x",
+    "diff": "^3.0.0",
     "executive": "^1.1.5",
     "fs-extra": "^0.30.0",
     "inquirer": "^1.1.3",
@@ -69,5 +70,16 @@
     "walk": "^2.3.9",
     "walk-promise": "^0.2.0",
     "walk-sync": "^0.2.6"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "coveralls": "^2.11.14",
+    "eslint": "^3.6.1",
+    "nyc": "^8.3.0"
+  },
+  "ava": {
+    "failFast": true,
+    "tap": true,
+    "babel": "inherit"
   }
 }

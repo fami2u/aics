@@ -1,15 +1,13 @@
 language: node_js
-branches:
-  only:
-    - master
 node_js:
-   - "0.12"
-   - "0.10"
-   - "0.10.45"
-   - "4"
-   - "5"
+  - "6"
+  - "5"
+  - "4"
 os:
   - linux
-before_install:
-  - sudo npm install
-sudo: required
+before_script:
+  - npm install
+script: npm test
+
+after_success:
+    - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'

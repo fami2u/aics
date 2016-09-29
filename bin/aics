@@ -8,7 +8,7 @@ var argv = require('minimist')(process.argv.slice(2));
 if (!process.env.AICS_HOST) {
   process.env.AICS_HOST = 'http://storage.fami2u.com';
 }
-process.env.AICS_HOST = 'http://localhost:8080';
+// process.env.AICS_HOST = 'http://localhost:8080';
 var pkg = require('../package.json');
 process.title = 'aics';
 commander.version(pkg.version)
@@ -39,8 +39,6 @@ commander
     console.log("   $ aics createuser #create user account")
     console.log()
   })
-
-
 
 //log logind user info
 commander
@@ -81,13 +79,12 @@ commander
     console.log('    # aics add fami:readme # 添加代码包到project');
     console.log();
   });
-
 commander
   .command('update')
   .description('更新项目依赖')
   .action(function() {
     console.log(argv._)
-    PackageManager.updatePackage()
+    PackageManager.updatePackage(argv._)
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
