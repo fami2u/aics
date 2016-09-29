@@ -9,4 +9,3 @@ test('bar', async t => {
 
     t.is(await bar, 'bar');
 });
-test.todo('will think about writing this later');
