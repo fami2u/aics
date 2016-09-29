@@ -8,25 +8,21 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc ava",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "coverage2": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "author": {
     "email": "qintengfei@fami2u.com",
     "name": "qintengfei"
   },
-  "contributors": [
-    {
-      "email": "sunhannan@fami2u.com",
-      "name": "sunhannan",
-      "url": "https://github.com/sunhannan"
-    },
-    {
-      "email": "romejiang@gmail.com",
-      "name": "Jinag Tao",
-      "url": "https://github.com/romejiang"
-    }
-  ],
+  "contributors": [{
+    "email": "sunhannan@fami2u.com",
+    "name": "sunhannan",
+    "url": "https://github.com/sunhannan"
+  }, {
+    "email": "romejiang@gmail.com",
+    "name": "Jinag Tao",
+    "url": "https://github.com/romejiang"
+  }],
   "keywords": [
     "meteor",
     "deploy",
