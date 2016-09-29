@@ -2,15 +2,14 @@ language: node_js
 sudo: true
 os:
   - linux
-  - osx
 node_js:
   - "4"
 cache:
   directories:
     - node_modules
-before_script:
+install:
+  - npm install -g codecov
   - npm install
 script: 
  - npm test
-
-after_success: npm run coverage
+ - npm run coverage
