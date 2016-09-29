@@ -84,7 +84,8 @@
     "eslint-plugin-ava": "^3.1.0",
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
-    "nyc": "^8.3.0"
+    "nyc": "^8.3.0",
+    "tap": "^7.1.2"
   },
   "ava": {
     "failFast": true,
