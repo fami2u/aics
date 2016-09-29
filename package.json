@@ -7,9 +7,9 @@
   "description": "Aics is a code manager & meteor app deploy tools",
   "main": "index.js",
   "scripts": {
-    "test": "nyc ava && eslint",
+    "test": "nyc ava",
     "lint": "eslint ./lib/**/*.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
   },
   "author": {
     "email": "qintengfei@fami2u.com",
