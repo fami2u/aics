@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-var ProjectManager = require('../lib/aics/project');
-var PackageManager = require('../lib/aics/package');
-var Account = require('../lib/aics/account');
+var ProjectManager = require('../lib/project');
+var PackageManager = require('../lib/package');
+var Account = require('../lib/account');
 var commander = require('commander');
 var argv = require('minimist')(process.argv.slice(2));
 if (!process.env.AICS_HOST) {
@@ -70,7 +70,7 @@ commander
 
 commander
   .command('add [name]')
-  .description('添加 aics 代码包 代码包地址: http://codedepot.fami2u.com/')
+  .description('添加 aics 代码包 代码包地址: http://aics.fami2u.com/')
   .action(function(env, options) {
     PackageManager.add(env)
   }).on('--help', function() {
