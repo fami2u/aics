@@ -4,7 +4,7 @@
 A meteor code manager command line tool.
 
 [![Build Status](https://travis-ci.org/fami2u/aics.svg?branch=master)](https://travis-ci.org/fami2u/aics)
-[![Coverage Status](https://coveralls.io/repos/github/fami2u/aics/badge.svg)](https://coveralls.io/github/fami2u/aics)
+[![codecov](https://codecov.io/gh/fami2u/aics/branch/master/graph/badge.svg)](https://codecov.io/gh/fami2u/aics)
 [![Dependency Status](https://dependencyci.com/github/fami2u/aics/badge)](https://dependencyci.com/github/fami2u/aics)
 ## 命令
 
@@ -75,7 +75,7 @@ Usage: aics --help
 
 ```
   Usage: add [options] [packagename]
-  添加名为 packagename 的 aics 代码包 代码包地址: http://code.fami2u.com/
+  添加名为 packagename 的 aics 代码包 代码包地址: http://aics.fami2u.com/
 
   Options:
     -h, --help  output usage information
