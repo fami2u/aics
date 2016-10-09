@@ -1,12 +1,22 @@
-  
-##aics
+# aics
 
 A meteor code manager command line tool.
+
+AI client && server
 
 [![Build Status](https://travis-ci.org/fami2u/aics.svg?branch=master)](https://travis-ci.org/fami2u/aics)
 [![codecov](https://codecov.io/gh/fami2u/aics/branch/master/graph/badge.svg)](https://codecov.io/gh/fami2u/aics)
 [![Dependency Status](https://dependencyci.com/github/fami2u/aics/badge)](https://dependencyci.com/github/fami2u/aics)
-## 命令
+
+###  Installation
+
+```
+npm install -g aics
+```
+
+
+
+## Usage
 
 ```
     adduser                               登录 aics CLI
@@ -18,7 +28,7 @@ A meteor code manager command line tool.
     addfile [options]                     添加文件到组件
 ```
 
-### `aics -V`
+### aics -V
 
 ```
 Usage: aics -V
@@ -164,12 +174,14 @@ x.depot.json
 - [x] 安装包
 - [ ] 更新包
 - [ ] 去除无用的npm包
-- [ ] 添加代码覆盖率测试
-- [ ] 添加ci
+- [x] 添加代码覆盖率测试
+- [x] 添加ci
 - [ ] 添加运行截图，让用户更直观的发现需要的包
 
 
 ## FeedBack
 使用过程中如果遇到问题 , 请提交 [ISSUE](https://github.com/fami2u/aics-docs/issues)
 
+### License
 
+MIT
