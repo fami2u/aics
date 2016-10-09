@@ -15,15 +15,18 @@
     "email": "qintengfei@fami2u.com",
     "name": "qintengfei"
   },
-  "contributors": [{
-    "email": "sunhannan@fami2u.com",
-    "name": "sunhannan",
-    "url": "https://github.com/sunhannan"
-  }, {
-    "email": "romejiang@gmail.com",
-    "name": "Jinag Tao",
-    "url": "https://github.com/romejiang"
-  }],
+  "contributors": [
+    {
+      "email": "sunhannan@fami2u.com",
+      "name": "sunhannan",
+      "url": "https://github.com/sunhannan"
+    },
+    {
+      "email": "romejiang@gmail.com",
+      "name": "Jinag Tao",
+      "url": "https://github.com/romejiang"
+    }
+  ],
   "keywords": [
     "meteor",
     "deploy",
@@ -46,6 +49,7 @@
     "chalk": "^1.1.1",
     "cjson": "^0.4.0",
     "commander": "^2.9.0",
+    "diff": "^3.0.0",
     "inquirer": "^1.1.3",
     "md5": "^2.1.0",
     "minimist": "^1.2.0",
