@@ -107,6 +107,7 @@ commander
 
 commander
   .command('addfile')
+  .description('添加文件到组件')
   .option('-f, --file <path>', '添加文件到组件')
   .option('-t, --target <name>', '添加到的组件名称')
   .description('添加文件到组件')
