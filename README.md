@@ -2,11 +2,13 @@
 
 A meteor code manager command line tool.
 
-AI client && server
-
 [![Build Status](https://travis-ci.org/fami2u/aics.svg?branch=master)](https://travis-ci.org/fami2u/aics)
 [![codecov](https://codecov.io/gh/fami2u/aics/branch/master/graph/badge.svg)](https://codecov.io/gh/fami2u/aics)
 [![Dependency Status](https://dependencyci.com/github/fami2u/aics/badge)](https://dependencyci.com/github/fami2u/aics)
+
+### Background
+
+如何提高开发者的开发效率？我们一直在思考。我们的解决方法是：让代码复用更容易且封装精良，粒度适中，适合模块化开发。基于这个想法并结合业务实践，我们开发了aics 系统。aics不单纯是一个cli命令行客户端，它还包括大量可复用的代码包资源库 http://aics.fami2u.com 。对比npm包，aics具有更快的开发效率，因为它比npm在代码控制的粒度上更大，且源代码可随时查看并修改，实时刷新。对于很多开发者而言，可能业务逻辑上的开发效率很低，针对于此，我们封装了大量的业务逻辑，微信红包，支付宝支付，微信支付，jpush，甚至整套的购物流程，整套的后台数据管理等，更多使用广泛的组件也在积极的积攒中，使用的时候只需要aics add 对应的包名即可使用。我们在资源库中，我们创建了不同的技术栈，每一个技术栈对应于一种目录或开发规范，这样就能保证任何有用的代码都可以有适合的栈去存放。不远的将来，aics资源库会积累很多有价值的组件，逐步形成一个社会化贡献的你的私人代码资源库。aics更多有意思的地方，一起来探索吧。
 
 ###  Installation
 
@@ -14,9 +16,11 @@ AI client && server
 npm install -g aics
 ```
 
-
-
 ## Usage
+
+
+
+## API
 
 ```
     adduser                               登录 aics CLI

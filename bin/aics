@@ -13,6 +13,12 @@ var pkg = require('../package.json');
 process.title = 'aics';
 commander.version(pkg.version)
   .description(pkg.description)
+.on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics adduser # 登录aics cli');
+    console.log();
+  });
 
 //add user
 commander
@@ -27,6 +33,7 @@ commander
     console.log();
   });
 
+//create user
 commander
   .command('register')
   .description('创建aics账户')
@@ -55,12 +62,11 @@ commander
   });
 
 // generate aics codedepot conf or aics project conf
-
 commander
-  .command('init')
+  .command('init <name>')
   .description('生成aics配置文件')
-  .action(function(options) {
-    PackageManager.init(process.argv);
+  .action(function(name) {
+    PackageManager.init(name);
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
@@ -69,10 +75,10 @@ commander
   });
 
 commander
-  .command('add [name]')
+  .command('add <name>')
   .description('添加 aics 代码包 代码包地址: http://aics.fami2u.com/')
-  .action(function(env, options) {
-    PackageManager.add(env)
+  .action(function(name) {
+    PackageManager.add(name)
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
@@ -80,11 +86,10 @@ commander
     console.log();
   });
 commander
-  .command('update')
+  .command('update <name>')
   .description('更新项目依赖')
-  .action(function() {
-    console.log(argv._)
-    PackageManager.updatePackage(argv._)
+  .action(function(name) {
+    PackageManager.updatePackage(name)
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
@@ -94,7 +99,7 @@ commander
   });
 
 commander
-  .command('publish')
+  .command('publish <name>')
   .description('发布 aics 组件')
   .action(function(options) {
     PackageManager.publish();
@@ -110,7 +115,6 @@ commander
   .description('添加文件到组件')
   .option('-f, --file <path>', '添加文件到组件')
   .option('-t, --target <name>', '添加到的组件名称')
-  .description('添加文件到组件')
   .action(function(options) {
     PackageManager.addfile(options.target, options.file);
   }).on('--help', function() {
@@ -119,7 +123,30 @@ commander
     console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
     console.log();
   });
+commander
+  .command('rollback <name>')
+  .description('回滚项目安装的组件')
+  .action(function(name) {
+    console.log(name)
+    // PackageManager.rollback(name);
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
+    console.log();
+  });
 
-
+commander
+  .command('remove <name>')
+  .description('删除安装的组件')
+  .action(function(name) {
+    console.log(name)
+    // PackageManager.rollback(name);
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
+    console.log();
+  });
 
 commander.parse(process.argv);
