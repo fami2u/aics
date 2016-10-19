@@ -1,24 +1,26 @@
 #!/usr/bin/env node
 
+'use strict';
+
 var ProjectManager = require('../lib/project');
 var PackageManager = require('../lib/package');
+var StackManager = require('../lib/stack');
 var Account = require('../lib/account');
 var commander = require('commander');
-var argv = require('minimist')(process.argv.slice(2));
+require('../lib/update_notifier');
+
 if (!process.env.AICS_HOST) {
   process.env.AICS_HOST = 'http://storage.fami2u.com';
 }
+
 // process.env.AICS_HOST = 'http://localhost:8080';
+
 var pkg = require('../package.json');
-process.title = 'aics';
+
+process.title = 'aics-cli';
 commander.version(pkg.version)
   .description(pkg.description)
-.on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    $ aics adduser # 登录aics cli');
-    console.log();
-  });
+
 
 //add user
 commander
@@ -70,7 +72,7 @@ commander
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
-    console.log('    $ aics init [name] # 生成一个 名为 name 代码包项目 ');
+    console.log('    $ aics init <name> # 生成一个 名为 name 代码包项目 ');
     console.log();
   });
 
@@ -82,9 +84,81 @@ commander
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
-    console.log('    # aics add fami:readme # 添加代码包到project');
+    console.log('    # aics add fami:readme # 添加代码包到项目');
     console.log();
   });
+
+// start a project from a stack template
+commander
+  .command('start <name> <stack>')
+  .description('根据选定的技术栈生成项目 技术栈地址: http://aics.fami2u.com/stacks')
+  .action(function(name,stack) {
+    StackManager.initWithStack(name,stack);
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    # aics start app meteor-wechat');
+    console.log();
+  });
+
+//publish to aics
+commander
+  .command('publish <name>')
+  .description('发布 aics 组件')
+  .action(function(name) {
+    PackageManager.publish(name);
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ aics publish [name] # 发布名为 [name] 的 aics 代码包');
+    console.log();
+  });
+
+//addfile to package
+commander
+  .command('addfile <file> <name>')
+  .description('添加文件到组件')
+  .action(function(file,name) {
+    PackageManager.addfile( file,name);
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('   # aics addfile README.md depot # 添加文件README.md 到 depot 组件包');
+    console.log();
+  });
+
+
+// 回滚安装的模块
+
+// commander
+//   .command('rollback <name>')
+//   .description('回滚项目安装的组件')
+//   .action(function(name) {
+//     console.log(name)
+//     // PackageManager.rollback(name);
+//   }).on('--help', function() {
+//     console.log('  Examples:');
+//     console.log();
+//     console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
+//     console.log();
+//   });
+
+//删除安装的包
+
+commander
+  .command('rm <name>')
+  .description('删除安装的组件')
+  .action(function(name) {
+    PackageManager.remove(name);
+  }).on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('   # aics remove fami:readme # 删除安装的包');
+    console.log();
+  });
+
+//更新依赖的的包
+
 commander
   .command('update <name>')
   .description('更新项目依赖')
@@ -97,56 +171,4 @@ commander
     console.log('    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包的版本');
     console.log();
   });
-
-commander
-  .command('publish <name>')
-  .description('发布 aics 组件')
-  .action(function(options) {
-    PackageManager.publish();
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('    $ aics publish [name] # 发布名为 [name] 的 aics 代码包');
-    console.log();
-  });
-
-commander
-  .command('addfile')
-  .description('添加文件到组件')
-  .option('-f, --file <path>', '添加文件到组件')
-  .option('-t, --target <name>', '添加到的组件名称')
-  .action(function(options) {
-    PackageManager.addfile(options.target, options.file);
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
-    console.log();
-  });
-commander
-  .command('rollback <name>')
-  .description('回滚项目安装的组件')
-  .action(function(name) {
-    console.log(name)
-    // PackageManager.rollback(name);
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
-    console.log();
-  });
-
-commander
-  .command('remove <name>')
-  .description('删除安装的组件')
-  .action(function(name) {
-    console.log(name)
-    // PackageManager.rollback(name);
-  }).on('--help', function() {
-    console.log('  Examples:');
-    console.log();
-    console.log('   # aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包');
-    console.log();
-  });
-
 commander.parse(process.argv);
