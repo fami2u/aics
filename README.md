@@ -23,13 +23,19 @@ npm install -g aics
 ## API
 
 ```
-    adduser                               登录 aics CLI
-    info                                  显示 aics 登录用户信息
-    init [options]                        生成aics配置文件
-    add [name]                            添加 aics 代码包 代码包地址: http://aics.fami2u.com/
-    update [options]                      更新项目或代码包依赖
-    publish [options]                     发布aics项目或组件
-    addfile [options]                     添加文件到组件
+  Commands:
+
+    adduser                登录aics cli
+    register               创建aics账户
+    info                   显示 aics cli 登录用户信息
+    init <name>            生成aics配置文件
+    add <name>             添加 aics 代码包 代码包地址: http://aics.fami2u.com/
+    start <name> <stack>   根据选定的技术栈生成项目 技术栈地址: http://aics.fami2u.com/stacks
+    publish <name>         发布 aics 组件
+    addfile <file> <name>  添加文件到组件
+    rm <name>              删除安装的组件
+    update <name>          更新项目依赖
+
 ```
 
 ### aics -V
@@ -107,10 +113,8 @@ Usage: aics --help
 
   Options:
     -h, --help        output usage information
-    -a, --all <path>  update all packages in .aics/packages.json
 
   Examples:
-    $ aics update -a # 更新项目依赖的代码包的版本
     $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包的版本
 ```
 
@@ -135,13 +139,34 @@ Usage: aics --help
 
   Options:
     -h, --help           output usage information
-    -f, --file <path>    文件名或目录
-    -t, --target <name>  添加到的组件名称
 
   Examples:
-    $ aics addfile -f README.md -t depot # 添加文件README.md 到 depot 组件包
+    $ aics addfile README.md depot # 添加文件README.md 到 depot 组件包
 ```
+### `aics rm` 
 
+```
+  Usage: rm <name>
+  删除安装的组件
+
+  Options:
+    -h, --help           output usage information
+
+  Examples:
+    $ aics rm depot #  删除安装的组件
+```
+### `aics start` 
+
+```
+  Usage: start [options]
+  使用技术栈模版创建项目
+
+  Options:
+    -h, --help           output usage information
+
+  Examples:
+    $ aics start app meteor # 使用meteor技术栈模版创建app项目
+```
 ## 配置文件示例
 
 aics 初始化 代码包配置文件
