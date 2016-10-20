@@ -9,9 +9,7 @@ var Account = require('../lib/account');
 var commander = require('commander');
 require('../lib/update_notifier');
 
-if (!process.env.AICS_HOST) {
-  process.env.AICS_HOST = 'http://storage.fami2u.com';
-}
+process.env.AICS_HOST = 'http://storage.fami2u.com';
 
 // process.env.AICS_HOST = 'http://localhost:8080';
 
@@ -167,8 +165,8 @@ commander
   }).on('--help', function() {
     console.log('  Examples:');
     console.log();
-    console.log('    $ aics update # 更新项目依赖的代码包的版本');
-    console.log('    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包的版本');
+    console.log('    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包');
     console.log();
   });
+  
 commander.parse(process.argv);

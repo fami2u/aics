@@ -5,6 +5,7 @@ A meteor code manager command line tool.
 [![Build Status](https://travis-ci.org/fami2u/aics.svg?branch=master)](https://travis-ci.org/fami2u/aics)
 [![codecov](https://codecov.io/gh/fami2u/aics/branch/master/graph/badge.svg)](https://codecov.io/gh/fami2u/aics)
 [![Dependency Status](https://dependencyci.com/github/fami2u/aics/badge)](https://dependencyci.com/github/fami2u/aics)
+[![Known Vulnerabilities](https://snyk.io/test/github/fami2u/aics/badge.svg)](https://snyk.io/test/github/fami2u/aics)
 
 ### Background
 
