@@ -2,6 +2,8 @@
 
 'use strict';
 
+process.title = 'aics-cli';
+
 var ProjectManager = require('../lib/project');
 var PackageManager = require('../lib/package');
 var StackManager = require('../lib/stack');
@@ -14,8 +16,6 @@ process.env.AICS_HOST = 'http://storage.fami2u.com';
 // process.env.AICS_HOST = 'http://localhost:8080';
 
 var pkg = require('../package.json');
-
-process.title = 'aics-cli';
 commander.version(pkg.version)
   .description(pkg.description)
 
@@ -168,5 +168,5 @@ commander
     console.log('    $ aics update [name] # 更新名为 [name] 的代码包依赖的代码包');
     console.log();
   });
-  
+
 commander.parse(process.argv);
