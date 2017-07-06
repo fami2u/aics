@@ -15,15 +15,18 @@
     "email": "qintengfei@fami2u.com",
     "name": "qintengfei"
   },
-  "contributors": [{
-    "email": "sunhannan@fami2u.com",
-    "name": "sunhannan",
-    "url": "https://github.com/sunhannan"
-  }, {
-    "email": "romejiang@gmail.com",
-    "name": "Jinag Tao",
-    "url": "https://github.com/romejiang"
-  }],
+  "contributors": [
+    {
+      "email": "sunhannan@fami2u.com",
+      "name": "sunhannan",
+      "url": "https://github.com/sunhannan"
+    },
+    {
+      "email": "romejiang@gmail.com",
+      "name": "Jinag Tao",
+      "url": "https://github.com/romejiang"
+    }
+  ],
   "keywords": [
     "meteor",
     "deploy",
@@ -52,7 +55,7 @@
     "mkdirp": "^0.5.1",
     "progress": "^1.1.8",
     "read": "^1.0.7",
-    "request": "2.74.0",
+    "request": "2.81.0",
     "request-promise": "^4.1.1",
     "unzip2": "^0.2.5",
     "update-notifier": "^1.0.2",
