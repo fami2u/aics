@@ -42,7 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "aliyun-oss-upload-stream": "^1.2.4",
-    "archiver": "0.21.x",
+    "archiver": "1.0.0",
     "cjson": "^0.4.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
